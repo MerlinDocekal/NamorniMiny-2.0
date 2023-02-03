@@ -1,0 +1,1 @@
+# NamorniMiny-2.0
