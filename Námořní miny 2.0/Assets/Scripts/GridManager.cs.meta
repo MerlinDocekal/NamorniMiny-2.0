@@ -3,7 +3,9 @@ guid: a05a462815681554680c56ba7a4f2e39
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - polickoPrefab: {instanceID: 0}
+  - kamera: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

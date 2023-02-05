@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sirka: 20
   vyska: 20
-  tilePrefab: {fileID: 7460710064277628873, guid: 3b09682003d88ce4cbc4a7ea28c458a4, type: 3}
+  polickoPrefab: {fileID: 7460710064277628873, guid: 3b09682003d88ce4cbc4a7ea28c458a4, type: 3}
   kamera: {fileID: 519420032}
 --- !u!4 &1128391468
 Transform:

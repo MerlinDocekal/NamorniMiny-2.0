@@ -8,5 +8,15 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    
+    [SerializeField] GameObject highlight;
+
+    void OnMouseEnter()
+    {
+        highlight.SetActive(true);
+    }
+
+   void OnMouseExit()
+    { 
+        highlight.SetActive(false);
+    }
 }
