@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Zdroj: https://www.youtube.com/watch?v=kkAjpQAM-jE
+
+
 public class GridManager : MonoBehaviour
 {
     [SerializeField] private int sirka;
@@ -24,10 +28,14 @@ public class GridManager : MonoBehaviour
             {
                 Tile spawnedTile = Instantiate(tilePrefab, new Vector3(x, y, 0), Quaternion.identity);
                 
-                spawnedTile.name = $"Tile {x} {y}";
+                spawnedTile.name = $"Tile_1 {x} {y}";
+
+                spawnedTile = Instantiate(tilePrefab, new Vector3(x + 23, y, 0), Quaternion.identity);
+
+                spawnedTile.name = $"Tile_2 {x} {y}";
             }
         }
 
-        kamera.transform.position = new Vector3((float) sirka/2 - 0.5f, (float) vyska/2 - 0.5f, -20);
+        kamera.transform.position = new Vector3((float) sirka + 1f, (float) vyska/2 - 0.5f, -20);
     }
 }
