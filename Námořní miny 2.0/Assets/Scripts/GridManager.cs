@@ -16,6 +16,7 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private Transform kamera;
 
+
     private Dictionary<Vector2, Tile> polickaGridu1;
     private Dictionary<Vector2, Tile> polickaGridu2;
 
