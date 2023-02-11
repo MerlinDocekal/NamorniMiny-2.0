@@ -16,6 +16,7 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private Transform kamera;
 
+    public GameObject tlacitko;
 
     private Dictionary<Vector2, Tile> polickaGridu1;
     private Dictionary<Vector2, Tile> polickaGridu2;
@@ -23,6 +24,13 @@ public class GridManager : MonoBehaviour
     private void Start()
     {
         GenerovatGrid();
+
+        
+        for(int i = -660; i < 600; i =+150)
+        {
+            Instantiate(tlacitko, new Vector3(i,330,0), Quaternion.identity));
+        }
+        //Instantiate(tlacitko, new Vector3(-600,330,0), Quaternion.identity));
     }
 
     void GenerovatGrid()
@@ -77,5 +85,8 @@ public class GridManager : MonoBehaviour
 
         return policko;
     }
+
+
+
     
 }
