@@ -38,8 +38,7 @@ public class GridManager : MonoBehaviour
                 Tile vytvorenePolicko = Instantiate(polickoPrefab, new Vector3(x, y, 0), Quaternion.identity);
                 
                 vytvorenePolicko.name = $"Tile_1 {x} {y}";
-                vytvorenePolicko.SouradniceX = x;
-                vytvorenePolicko.SouradniceY = y;
+                vytvorenePolicko.NastavitSouradnice(new Vector2(x, y));
                 polickaGridu1[new Vector2(x, y)] = vytvorenePolicko;
 
 
@@ -47,11 +46,13 @@ public class GridManager : MonoBehaviour
                 vytvorenePolicko = Instantiate(polickoPrefab, new Vector3(x + 23, y, 0), Quaternion.identity);
 
                 vytvorenePolicko.name = $"Tile_2 {x} {y}";
+                vytvorenePolicko.NastavitSouradnice(new Vector2(x, y));
                 polickaGridu2[new Vector2(x, y)] = vytvorenePolicko;
             }
         }
 
-        kamera.transform.position = new Vector3((float) sirka + 1f, (float) vyska/2 - 0.5f, -20);
+
+        kamera.transform.position = new Vector3((float)sirka + 1f, (float)vyska / 2 - 0.5f, -20);
     }
 
     /// <summary>
@@ -63,9 +64,9 @@ public class GridManager : MonoBehaviour
     public Tile VratitPolickoNaPozici(Vector2 pozice, int cisloGridu)
     {
         Tile policko = null;
-        if(cisloGridu == 1)
+        if (cisloGridu == 1)
         {
-            if(polickaGridu1.TryGetValue(pozice, out var tile))
+            if (polickaGridu1.TryGetValue(pozice, out var tile))
             {
                 policko = tile;
             }
@@ -80,5 +81,4 @@ public class GridManager : MonoBehaviour
 
         return policko;
     }
-    
 }

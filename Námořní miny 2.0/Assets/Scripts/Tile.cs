@@ -12,22 +12,12 @@ public class Tile : MonoBehaviour
     [SerializeField] private GameObject highlight;
     [SerializeField] private Sprite spriteTest;
 
-    public int SouradniceX { get; private set; }
-    public int SouradniceY { get; private set; }
-
+    public Vector2 Souradnice { get; private set; }
     public new SpriteRenderer renderer; //Vytváøí instanci SpriteRenderer
 
-
-    public void NastavitSouradnice(int x, int y)
+    public void NastavitSouradnice(Vector2 souradnice)
     {
-        this.SouradniceX = x;
-        this.SouradniceY = y;
-        return;
-    }
-
-    private void Start()
-    {
-        renderer = this.GetComponent<SpriteRenderer>(); //Nacpe do instance SpriteRenderer prefabu Tile
+        this.Souradnice = souradnice;
         return;
     }
 
@@ -45,17 +35,21 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        renderer.sprite = spriteTest;
-
-
-
-
-        highlight.SetActive(false);
+        this.NakliknutiLodi();
         return;
     }
 
     private void NakliknutiLodi()
     {
+        renderer.sprite = spriteTest;
+        GridManager gm = GameObject.Find("GridManager").GetComponent<GridManager>();
+        Tile policko = gameObject.AddComponent<Tile>();
+        policko = gm.VratitPolickoNaPozici(new Vector2((float)this.Souradnice.x + 1, (float)this.Souradnice.y), 1);
+        policko.renderer.sprite = spriteTest;
+        policko = gm.VratitPolickoNaPozici(new Vector2((float)this.Souradnice.x - 1, (float)this.Souradnice.y), 1);
+        policko.renderer.sprite = spriteTest;
+
+        highlight.SetActive(false);
         return;
     }
 
