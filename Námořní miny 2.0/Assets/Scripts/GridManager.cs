@@ -25,12 +25,8 @@ public class GridManager : MonoBehaviour
     {
         GenerovatGrid();
 
-        
-        for(int i = -660; i < 600; i =+150)
-        {
-            Instantiate(tlacitko, new Vector3(i,330,0), Quaternion.identity));
-        }
-        //Instantiate(tlacitko, new Vector3(-600,330,0), Quaternion.identity));
+        GenerovaniTlacitek();
+
     }
 
     void GenerovatGrid()
@@ -57,6 +53,14 @@ public class GridManager : MonoBehaviour
         }
 
         kamera.transform.position = new Vector3((float) sirka + 1f, (float) vyska/2 - 0.5f, -20);
+    }
+
+    void GenerovaniTlacitek()
+    {
+        for (int i = -660; i < 600; i += 150)
+        {
+            Instantiate(tlacitko, new Vector3(i, 330, 0), Quaternion.identity);
+        }
     }
 
     /// <summary>
