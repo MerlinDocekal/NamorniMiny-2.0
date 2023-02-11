@@ -12,6 +12,8 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int sirka;
     [SerializeField] private int vyska;
 
+
+
     [SerializeField] private Tile polickoPrefab;
 
     [SerializeField] private Transform kamera;
@@ -36,6 +38,8 @@ public class GridManager : MonoBehaviour
                 Tile vytvorenePolicko = Instantiate(polickoPrefab, new Vector3(x, y, 0), Quaternion.identity);
                 
                 vytvorenePolicko.name = $"Tile_1 {x} {y}";
+                vytvorenePolicko.SouradniceX = x;
+                vytvorenePolicko.SouradniceY = y;
                 polickaGridu1[new Vector2(x, y)] = vytvorenePolicko;
 
 
