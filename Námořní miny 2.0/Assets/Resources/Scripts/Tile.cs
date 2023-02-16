@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 
@@ -11,9 +12,10 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] private GameObject highlight;
     [SerializeField] private Sprite spriteTest;
+    [SerializeField] private Lod lodPrefab;
 
+    private ShipManager shipManager;
     public Vector2 Souradnice { get; private set; }
-    public new SpriteRenderer renderer; //Vytváøí instanci SpriteRenderer
 
     public void NastavitSouradnice(Vector2 souradnice)
     {
@@ -35,22 +37,9 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        this.NakliknutiLodi();
+        //shipManager = gameObject.AddComponent<ShipManager>();
+        //shipManager.NakliknutiLodi((int)Souradnice.x, (int)Souradnice.y);
+        Instantiate(lodPrefab, new Vector3(Souradnice.x, Souradnice.y, -1), Quaternion.identity); //Quaternion.Euler(0, 0, 90) otoèí o 90°
         return;
     }
-
-    private void NakliknutiLodi()
-    {
-        renderer.sprite = spriteTest;
-        GridManager gm = GameObject.Find("GridManager").GetComponent<GridManager>();
-        Tile policko = gameObject.AddComponent<Tile>();
-        policko = gm.VratitPolickoNaPozici(new Vector2((float)this.Souradnice.x + 1, (float)this.Souradnice.y), 1);
-        policko.renderer.sprite = spriteTest;
-        policko = gm.VratitPolickoNaPozici(new Vector2((float)this.Souradnice.x - 1, (float)this.Souradnice.y), 1);
-        policko.renderer.sprite = spriteTest;
-
-        highlight.SetActive(false);
-        return;
-    }
-
 }
