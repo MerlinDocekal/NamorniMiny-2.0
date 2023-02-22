@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.VersionControl;
 using UnityEngine;
 
@@ -12,9 +15,7 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] private GameObject highlight;
     [SerializeField] private Sprite spriteTest;
-    [SerializeField] private Lod lodPrefab;
 
-    private ShipManager shipManager;
     public Vector2 Souradnice { get; private set; }
 
     public void NastavitSouradnice(Vector2 souradnice)
@@ -30,16 +31,14 @@ public class Tile : MonoBehaviour
     }
 
     private void OnMouseExit()
-    { 
+    {
         highlight.SetActive(false);
         return;
     }
 
     private void OnMouseDown()
     {
-        //shipManager = gameObject.AddComponent<ShipManager>();
-        //shipManager.NakliknutiLodi((int)Souradnice.x, (int)Souradnice.y);
-        Instantiate(lodPrefab, new Vector3(Souradnice.x, Souradnice.y, -1), Quaternion.identity); //Quaternion.Euler(0, 0, 90) otoèí o 90°
-        return;
+        ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
+        shipManager.NakliknoutLod(Souradnice.x, Souradnice.y);
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ShipManager : MonoBehaviour
 {
-    [SerializeField] private Lod lodPrefab;
+    [SerializeField] public Lod lodPrefab;
 
-    public void NakliknutiLodi(int x, int y)
+    public void NakliknoutLod(float x, float y)
     {
-        return;
-    }
+        Instantiate(lodPrefab, new Vector3(x, y, -1), Quaternion.identity);
+    }    
 }
