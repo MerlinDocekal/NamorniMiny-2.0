@@ -299,4 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429703e6c45b1ad439c8b3bd9ca8db81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lodPrefab: {fileID: 4153963970062316494, guid: 1bee09cb85e7b214291852c27726e19c, type: 3}
+  lodPrefab1: {fileID: 4153963970062316494, guid: 6b062e11e8d84ba4690e496ecaca00e1, type: 3}
+  lodPrefab3: {fileID: 4153963970062316494, guid: 1bee09cb85e7b214291852c27726e19c, type: 3}
+  lodPrefab5: {fileID: 4153963970062316494, guid: e583af83d74d3304cbba92d0af692b5b, type: 3}
+  lodPrefab7: {fileID: 4153963970062316494, guid: 2c2d0cb4d6fcb9d4a8b30661930c7456, type: 3}
