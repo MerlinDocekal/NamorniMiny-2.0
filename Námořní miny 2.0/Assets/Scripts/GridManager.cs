@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 //Zdroj: https://www.youtube.com/watch?v=kkAjpQAM-jE
@@ -16,7 +17,7 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private Transform kamera;
 
-    public GameObject tlacitko;
+    [SerializeField] public GameObject tlacitko;
 
     private Dictionary<Vector2, Tile> polickaGridu1;
     private Dictionary<Vector2, Tile> polickaGridu2;
@@ -27,6 +28,7 @@ public class GridManager : MonoBehaviour
 
         GenerovaniTlacitek();
 
+        
     }
 
     void GenerovatGrid()
@@ -55,13 +57,23 @@ public class GridManager : MonoBehaviour
         kamera.transform.position = new Vector3((float) sirka + 1f, (float) vyska/2 - 0.5f, -20);
     }
 
-    void GenerovaniTlacitek()
+    public void GenerovaniTlacitek()
     {
         for (int i = -660; i < 600; i += 150)
         {
             Instantiate(tlacitko, new Vector3(i, 330, 0), Quaternion.identity);
         }
     }
+
+    public void GoToMenu()
+    {
+
+        //tlacitko.SetActive(false);
+        SceneManager.LoadScene(1);
+        Debug.Log("ahoj");
+    }
+
+
 
     /// <summary>
     /// Vrátí políèko na zadané pozici ze zadaného Gridu
