@@ -41,11 +41,18 @@ public class ShipManager : MonoBehaviour
         {
             switch (velikostLodi)
             {
+
+                //https://docs.unity3d.com/ScriptReference/Physics2D.OverlapCapsule.html
+
                 case 1:
                     Lod lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
                     lodeVelikost1[new Vector2(x, y)] = lod;
                     break;
                 case 3:
+                    if(Physics2D.OverlapCapsule(new Vector2((float)(x + 0.5), (float)(y + 0.5)), new Vector2((float)0.5, (float)1.5), CapsuleDirection2D.Horizontal, 0, 7) == null) //todle nefungluje
+                    {
+                        Debug.Log("Nekoliduje");
+                    }
                     lod = Instantiate(lodPrefab3, new Vector3(x, y, -1), quaternion);
                     lodeVelikost3[new Vector2(x, y)] = lod;
                     break;

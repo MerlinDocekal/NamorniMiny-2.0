@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6897455797109192126}
   - component: {fileID: 7460710064277628873}
   - component: {fileID: 7094619722331546733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 8636228210026014332}
   spriteTest: {fileID: 21300000, guid: 5737660d7981ddf4f8e5dfbd32199344, type: 3}
-  sm: {fileID: 9042425564461531959, guid: c4d7b1342b6fdd5439c988a24dd05405, type: 3}
 --- !u!61 &7094619722331546733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -138,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2571448258929792772}
   - component: {fileID: 1796231851158181693}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Highlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
