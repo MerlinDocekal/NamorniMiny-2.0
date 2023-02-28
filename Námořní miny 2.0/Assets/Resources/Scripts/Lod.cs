@@ -5,8 +5,5 @@ using UnityEngine;
 
 public class Lod : MonoBehaviour
 {
-    public void OnCollisionEnter(Collision collision)
-    {
-        Console.WriteLine("Kolize");
-    }
+    
 }
