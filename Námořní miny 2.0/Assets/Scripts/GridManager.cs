@@ -27,8 +27,6 @@ public class GridManager : MonoBehaviour
         GenerovatGrid();
 
         GenerovaniTlacitek();
-
-        
     }
 
     void GenerovatGrid()
@@ -57,7 +55,7 @@ public class GridManager : MonoBehaviour
         kamera.transform.position = new Vector3((float) sirka + 1f, (float) vyska/2 - 0.5f, -20);
     }
 
-    public void GenerovaniTlacitek()
+    public void GenerovaniTlacitek()         //asi nefunkèní
     {
         for (int i = -660; i < 600; i += 150)
         {
@@ -68,7 +66,8 @@ public class GridManager : MonoBehaviour
     public void GoToMenu()
     {
 
-        //tlacitko.SetActive(false);
+        //tlacitko.SetActive(false);    // funkce na vypnutí daného tlaèítka
+
         SceneManager.LoadScene(1);
         Debug.Log("ahoj");
     }
