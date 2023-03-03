@@ -65,7 +65,7 @@ public class GridManager : MonoBehaviour
 
     public void GoToMenu()
     {
-
+        
         //tlacitko.SetActive(false);    // funkce na vypnutí daného tlaèítka
 
         SceneManager.LoadScene(1);
