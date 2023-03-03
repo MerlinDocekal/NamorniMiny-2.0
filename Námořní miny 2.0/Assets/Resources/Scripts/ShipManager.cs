@@ -15,12 +15,12 @@ public class ShipManager : MonoBehaviour
     private Dictionary<Vector2, Lod> lodeVelikost7 = new Dictionary<Vector2, Lod>();
 
     /// <summary>
-    /// Vytvoøí loï na požadovaných souøadnicích.
+    /// VytvoÃ¸Ã­ loÃ¯ na poÅ¾adovanÃ½ch souÃ¸adnicÃ­ch.
     /// </summary>
-    /// <param name="x">Souøadnice x.</param>
-    /// <param name="y">Souøadnice y.</param>
-    /// <param name="velikostLodi">Požadovaná velikost lodi (1, 3, 5, 7).</param>
-    /// <param name="rotace">Zda-li má být loï rotována.</param>
+    /// <param name="x">SouÃ¸adnice x.</param>
+    /// <param name="y">SouÃ¸adnice y.</param>
+    /// <param name="velikostLodi">PoÅ¾adovanÃ¡ velikost lodi (1, 3, 5, 7).</param>
+    /// <param name="rotace">Zda-li mÃ¡ bÃ½t loÃ¯ rotovÃ¡na.</param>
     public void NakliknoutLod(float x, float y, int velikostLodi, bool rotace)
     {
         Quaternion quaternion;
@@ -43,7 +43,7 @@ public class ShipManager : MonoBehaviour
             {
 
                 //https://docs.unity3d.com/ScriptReference/Physics2D.OverlapCapsule.html
-
+                //https://docs.unity3d.com/Manual/class-CapsuleCollider2D.html
                 case 1:
                     Lod lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
                     lodeVelikost1[new Vector2(x, y)] = lod;
@@ -68,11 +68,11 @@ public class ShipManager : MonoBehaviour
                 default:
                     break;
             }
-            Debug.Log("Lod vytvoøena");
+            Debug.Log("Lod vytvoÃ¸ena");
         }
         else
         {
-            Debug.Log("Lod nevytvoøena");
+            Debug.Log("Lod nevytvoÃ¸ena");
         }
     }    
 }
