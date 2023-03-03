@@ -16,48 +16,59 @@ public class ShipManager : MonoBehaviour
     private Dictionary<Vector2, Lod> lodeVelikost7 = new Dictionary<Vector2, Lod>();
 
     /// <summary>
-    /// Vytvoøí loï na požadovaných souøadnicích.
+    /// Vytvoří loď na požadovaných souřadnicích.
     /// </summary>
-    /// <param name="x">Souøadnice x.</param>
-    /// <param name="y">Souøadnice y.</param>
+    /// <param name="x">Souřadnice x.</param>
+    /// <param name="y">Souřadnice y.</param>
     /// <param name="velikostLodi">Požadovaná velikost lodi (1, 3, 5, 7).</param>
-    /// <param name="jeLodRotovanaHorizotalne">Zda-li má být loï rotována.</param>
-    public void NakliknoutLod(float x, float y, int velikostLodi, bool jeLodRotovanaHorizotalne)
+    /// <param name="jeLodHorizontalne">Zda-li má být loď rotována.</param>
+    public void NakliknoutLod(float x, float y, int velikostLodi, bool jeLodHorizontalne)
     {
         Quaternion quaternion;
         bool neniMimoHraniceGridu;
-        CapsuleDirection2D cd;
+        bool nekolidujeSLodi;
 
-        if (jeLodRotovanaHorizotalne)
+        if (jeLodHorizontalne)
         {
-            quaternion = Quaternion.identity;
+            quaternion = Quaternion.Euler(new Vector3(0, 0, 90));
             neniMimoHraniceGridu = ((x + velikostLodi / 2) <= 19 && (x - velikostLodi / 2) >= 0);
-            cd = Horizontal;
+
+            LayerMask mask = LayerMask.GetMask("Lode");
+            if (Physics2D.Raycast(new Vector2((x - ((float)velikostLodi / 2)), y), new Vector2(1, 0), velikostLodi, mask).collider == null)
+            {
+                nekolidujeSLodi = true;
+            }
+            else
+            {
+                nekolidujeSLodi = false;
+            }
         }
         else
         {
             quaternion = Quaternion.identity;
             neniMimoHraniceGridu = ((y + velikostLodi / 2) <= 19 && (y - velikostLodi / 2) >= 0);
-            cd = Vertical;
+
+            LayerMask mask = LayerMask.GetMask("Lode");
+            if (Physics2D.Raycast(new Vector2(x, (y - ((float)velikostLodi / 2))), new Vector2(0, 1), velikostLodi, mask).collider == null)
+            {
+                nekolidujeSLodi = true;
+            }
+            else
+            {
+                nekolidujeSLodi = false;
+            }
+
         }
 
-        if (neniMimoHraniceGridu)
+        if (neniMimoHraniceGridu && nekolidujeSLodi)
         {
             switch (velikostLodi)
             {
-                //https://docs.unity3d.com/ScriptReference/Physics2D.OverlapCapsule.html
-                //https://docs.unity3d.com/Manual/class-CapsuleCollider2D.html
-                //https://docs.unity3d.com/ScriptReference/Physics2D.Raycast.html
-
                 case 1:
                     Lod lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
                     lodeVelikost1[new Vector2(x, y)] = lod;
                     break;
                 case 3:
-                    if(Physics2D.OverlapCapsule(new Vector2((float)(x + 0.5), (float)(y + 0.5)), new Vector2(1, 3), cd, 0, 7) == null)
-                    {
-                        Debug.Log("Nekoliduje");
-                    }
                     lod = Instantiate(lodPrefab3, new Vector3(x, y, -1), quaternion);
                     lodeVelikost3[new Vector2(x, y)] = lod;
                     break;
@@ -73,11 +84,11 @@ public class ShipManager : MonoBehaviour
                 default:
                     break;
             }
-            Debug.Log("Lod vytvoøena");
+            Debug.Log("Lod vytvořena");
         }
         else
         {
-            Debug.Log("Lod nevytvoøena");
+            Debug.Log("Lod nevytvořena");
         }
     }    
 }
