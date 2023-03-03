@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class ShipManager : MonoBehaviour
@@ -20,36 +21,40 @@ public class ShipManager : MonoBehaviour
     /// <param name="x">Souøadnice x.</param>
     /// <param name="y">Souøadnice y.</param>
     /// <param name="velikostLodi">Požadovaná velikost lodi (1, 3, 5, 7).</param>
-    /// <param name="rotace">Zda-li má být loï rotována.</param>
-    public void NakliknoutLod(float x, float y, int velikostLodi, bool rotace)
+    /// <param name="jeLodRotovanaHorizotalne">Zda-li má být loï rotována.</param>
+    public void NakliknoutLod(float x, float y, int velikostLodi, bool jeLodRotovanaHorizotalne)
     {
         Quaternion quaternion;
         bool neniMimoHraniceGridu;
+        CapsuleDirection2D cd;
 
-        if(!rotace)
+        if (jeLodRotovanaHorizotalne)
         {
             quaternion = Quaternion.identity;
             neniMimoHraniceGridu = ((x + velikostLodi / 2) <= 19 && (x - velikostLodi / 2) >= 0);
+            cd = Horizontal;
         }
         else
         {
             quaternion = Quaternion.identity;
             neniMimoHraniceGridu = ((y + velikostLodi / 2) <= 19 && (y - velikostLodi / 2) >= 0);
+            cd = Vertical;
         }
 
         if (neniMimoHraniceGridu)
         {
             switch (velikostLodi)
             {
-
                 //https://docs.unity3d.com/ScriptReference/Physics2D.OverlapCapsule.html
                 //https://docs.unity3d.com/Manual/class-CapsuleCollider2D.html
+                //https://docs.unity3d.com/ScriptReference/Physics2D.Raycast.html
+
                 case 1:
                     Lod lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
                     lodeVelikost1[new Vector2(x, y)] = lod;
                     break;
                 case 3:
-                    if(Physics2D.OverlapCapsule(new Vector2((float)(x + 0.5), (float)(y + 0.5)), new Vector2((float)0.5, (float)1.5), CapsuleDirection2D.Horizontal, 0, 7) == null) //todle nefungluje
+                    if(Physics2D.OverlapCapsule(new Vector2((float)(x + 0.5), (float)(y + 0.5)), new Vector2(1, 3), cd, 0, 7) == null)
                     {
                         Debug.Log("Nekoliduje");
                     }
