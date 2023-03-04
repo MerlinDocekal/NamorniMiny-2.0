@@ -16,6 +16,7 @@ public class Tile : MonoBehaviour
     [SerializeField] private GameObject highlight;
     [SerializeField] private Sprite spriteTest;
 
+    public int CisloGridu { get; set; }
     public Vector2 Souradnice { get; private set; }
 
     public void NastavitSouradnice(Vector2 souradnice)
@@ -39,6 +40,6 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
         ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
-        shipManager.NakliknoutLod(Souradnice.x, Souradnice.y, 7, false);
+        shipManager.NakliknoutLod(Souradnice.x, Souradnice.y, 7, true, CisloGridu);
     }
 }

@@ -39,6 +39,7 @@ public class GridManager : MonoBehaviour
                 
                 vytvorenePolicko.name = $"Tile_1 {x} {y}";
                 vytvorenePolicko.NastavitSouradnice(new Vector2(x, y));
+                vytvorenePolicko.CisloGridu = 1;
                 polickaGridu1[new Vector2(x, y)] = vytvorenePolicko;
 
 
@@ -46,7 +47,8 @@ public class GridManager : MonoBehaviour
                 vytvorenePolicko = Instantiate(polickoPrefab, new Vector3(x + 23, y, 0), Quaternion.identity);
 
                 vytvorenePolicko.name = $"Tile_2 {x} {y}";
-                vytvorenePolicko.NastavitSouradnice(new Vector2(x, y));
+                vytvorenePolicko.NastavitSouradnice(new Vector2(x + 23, y));
+                vytvorenePolicko.CisloGridu = 2;
                 polickaGridu2[new Vector2(x, y)] = vytvorenePolicko;
             }
         }
@@ -59,7 +61,7 @@ public class GridManager : MonoBehaviour
     /// Vrátí políèko na zadané pozici ze zadaného Gridu
     /// </summary>
     /// <param name="pozice">Pozice ve formátu Vector2(x, y)</param>
-    /// <param name="cisloGridu">Èíslo Gridu, kterému políèko náleží (buï 1 nebo 2)</param>
+    /// <param name="cisloGridu">Èíslo Gridu, kterému políèko náleží (1, 2)</param>
     /// <returns></returns>
     public Tile VratitPolickoNaPozici(Vector2 pozice, int cisloGridu)
     {
