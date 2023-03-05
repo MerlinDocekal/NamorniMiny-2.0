@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ShipManager : MonoBehaviour
 {
+    public static ShipManager Instance { get; private set; }
+
     [SerializeField] private Lod lodPrefab1;
     [SerializeField] private Lod lodPrefab3;
     [SerializeField] private Lod lodPrefab5;
@@ -19,6 +21,18 @@ public class ShipManager : MonoBehaviour
     public Dictionary<Vector2, Lod> lodeVelikost3Grid2 = new Dictionary<Vector2, Lod>();
     public Dictionary<Vector2, Lod> lodeVelikost5Grid2 = new Dictionary<Vector2, Lod>();
     public Dictionary<Vector2, Lod> lodeVelikost7Grid2 = new Dictionary<Vector2, Lod>();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     /// <summary>
     /// Vytvoří loď na požadovaných souřadnicích.
