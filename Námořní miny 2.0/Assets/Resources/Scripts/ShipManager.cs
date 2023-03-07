@@ -28,6 +28,9 @@ public class ShipManager : MonoBehaviour
     /// <param name="velikostLodi">Požadovaná velikost lodi (1, 3, 5, 7).</param>
     /// <param name="jeLodHorizontalne">Zda-li má být loď rotována.</param>
     /// <param name="cisloGridu">Číslo Gridu (1, 2)</param>
+    /// 
+
+    
     public void NakliknoutLod(float x, float y, int velikostLodi, bool jeLodHorizontalne, int cisloGridu)
     {
         Quaternion quaternion;
@@ -68,6 +71,7 @@ public class ShipManager : MonoBehaviour
 
         if (neniMimoHraniceGridu && nekolidujeSLodi)
         {
+            
             switch (velikostLodi)
             {
                 case 1:

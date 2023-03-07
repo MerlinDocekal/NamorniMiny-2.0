@@ -278,7 +278,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.625401
+  orthographic size: 10.951103
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -316,6 +316,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Rotace1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: Rotate
@@ -415,6 +443,54 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
   m_PrefabInstance: {fileID: 1234308013}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &636457021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 636457023}
+  - component: {fileID: 636457022}
+  m_Layer: 0
+  m_Name: PlayerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &636457022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636457021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5077d2164332e3f49bd56d4ddc2a4899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lodPrefab1: {fileID: 4153963970062316494, guid: 6b062e11e8d84ba4690e496ecaca00e1, type: 3}
+  lodPrefab3: {fileID: 4153963970062316494, guid: 1bee09cb85e7b214291852c27726e19c, type: 3}
+  lodPrefab5: {fileID: 4153963970062316494, guid: e583af83d74d3304cbba92d0af692b5b, type: 3}
+  lodPrefab7: {fileID: 4153963970062316494, guid: 2c2d0cb4d6fcb9d4a8b30661930c7456, type: 3}
+--- !u!4 &636457023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636457021}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.335994, y: 6.4738655, z: -10.287401}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &868558024 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
@@ -427,6 +503,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NaklikavaniLodeA5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 5"
@@ -528,6 +632,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Rotace2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: Rotate
@@ -634,6 +766,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NaklikavaniLodeA3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 3"
@@ -1069,6 +1229,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NaklikavaniLodeA1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 1"
@@ -1170,6 +1358,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NaklikavaniLodeB7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 7"
@@ -1329,6 +1545,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NaklikavaniLodeB3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 3"
@@ -1440,6 +1684,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NaklikavaniLodeB5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 5"
@@ -1546,6 +1818,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NaklikavaniLodeA7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 7"
@@ -1647,6 +1947,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036472381}
     m_Modifications:
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 636457022}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NaklikavaniLodeB1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465684229738637270, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 1"

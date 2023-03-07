@@ -24,6 +24,8 @@ public class GridManager : MonoBehaviour
     private void Start()
     {
         GenerovatGrid();
+        
+        
     } 
 
     void GenerovatGrid()
