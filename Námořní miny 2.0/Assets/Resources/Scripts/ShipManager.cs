@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class ShipManager : MonoBehaviour
 {
+    public int velikostLodi;
+    public bool rotace;
+    public int grid;
+
     [SerializeField] private Lod lodPrefab1;
     [SerializeField] private Lod lodPrefab3;
     [SerializeField] private Lod lodPrefab5;
@@ -20,6 +24,7 @@ public class ShipManager : MonoBehaviour
     public Dictionary<Vector2, Lod> lodeVelikost5Grid2 = new Dictionary<Vector2, Lod>();
     public Dictionary<Vector2, Lod> lodeVelikost7Grid2 = new Dictionary<Vector2, Lod>();
 
+
     /// <summary>
     /// Vytvoří loď na požadovaných souřadnicích.
     /// </summary>
@@ -28,6 +33,7 @@ public class ShipManager : MonoBehaviour
     /// <param name="velikostLodi">Požadovaná velikost lodi (1, 3, 5, 7).</param>
     /// <param name="jeLodHorizontalne">Zda-li má být loď rotována.</param>
     /// <param name="cisloGridu">Číslo Gridu (1, 2)</param>
+    /// 
     public void NakliknoutLod(float x, float y, int velikostLodi, bool jeLodHorizontalne, int cisloGridu)
     {
         Quaternion quaternion;
@@ -68,6 +74,7 @@ public class ShipManager : MonoBehaviour
 
         if (neniMimoHraniceGridu && nekolidujeSLodi)
         {
+            
             switch (velikostLodi)
             {
                 case 1:
