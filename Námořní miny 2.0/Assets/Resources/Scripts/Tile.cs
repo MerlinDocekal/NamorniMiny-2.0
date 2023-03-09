@@ -40,6 +40,6 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
         ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
-        shipManager.NakliknoutLod(Souradnice.x, Souradnice.y, 7, true, CisloGridu);
+        shipManager.NakliknoutLod(Souradnice.x, Souradnice.y, 3, true, CisloGridu);
     }
 }
