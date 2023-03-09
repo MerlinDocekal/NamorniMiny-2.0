@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 
@@ -40,6 +39,6 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
         ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
-        shipManager.NakliknoutLod(Souradnice.x, Souradnice.y, 7, true, CisloGridu);
+        shipManager.NakliknoutLod(Souradnice.x, Souradnice.y, 3, true, CisloGridu);
     }
 }
