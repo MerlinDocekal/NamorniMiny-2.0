@@ -46,6 +46,7 @@ public class ShipManager : MonoBehaviour
             neniMimoHraniceGridu = ((x % 23) + velikostLodi / 2) <= 19 && ((x % 23) - velikostLodi / 2) >= 0;
 
             LayerMask mask = LayerMask.GetMask("Lode");
+            Debug.DrawRay(new Vector3((x - ((float)velikostLodi / 2)), y, -3), new Vector3(7, 0, 0), Color.red, 15);
             if (Physics2D.Raycast(new Vector2((x - ((float)velikostLodi / 2)), y), new Vector2(1, 0), velikostLodi, mask).collider == null)
             {
                 nekolidujeSLodi = true;
@@ -61,6 +62,7 @@ public class ShipManager : MonoBehaviour
             neniMimoHraniceGridu = ((y + velikostLodi / 2) <= 19 && (y - velikostLodi / 2) >= 0);
 
             LayerMask mask = LayerMask.GetMask("Lode");
+            Debug.DrawRay(new Vector3(x, (y - ((float)velikostLodi / 2)), -3), new Vector3(0, 7, 0), Color.red, 15);
             if (Physics2D.Raycast(new Vector2(x, (y - ((float)velikostLodi / 2))), new Vector2(0, 1), velikostLodi, mask).collider == null)
             {
                 nekolidujeSLodi = true;
