@@ -37,11 +37,11 @@ public class PlayerManager : MonoBehaviour
         jeLodHorizontalne = false;
         Debug.Log("Lod se otocila");
     }
-    public void Rotace2()
-    {
-        jeLodHorizontalne = false;
-        Debug.Log("Lod se otocila");
-    }
+    //public void Rotace2()
+    //{
+    //    jeLodHorizontalne = false;
+    //    Debug.Log("Lod se otocila");
+    //}
 
     public void NaklikavaniLodeA1()
     {
