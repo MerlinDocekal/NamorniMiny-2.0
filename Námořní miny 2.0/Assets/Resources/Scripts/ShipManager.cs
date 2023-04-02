@@ -127,12 +127,13 @@ public class ShipManager : MonoBehaviour
                     {
                         lodeVelikost7Grid2[new Vector2(x, y)] = lod;
                     }
+
+                    Debug.Log("Lod vytvořena");
                     break;
 
                 default:
                     break;
             }
-            Debug.Log("Lod vytvořena");
         }
         else
         {

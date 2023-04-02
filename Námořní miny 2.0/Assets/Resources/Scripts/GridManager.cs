@@ -73,6 +73,9 @@ public class GridManager : MonoBehaviour
 
 
         kamera.transform.position = new Vector3((float)sirka + 1f, (float)vyska / 2 - 0.5f, -20);
+        //
+        ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
+        shipManager.NakliknoutLod(10, 10, 7, true, 1);
     }
 
     /// <summary>
@@ -104,7 +107,17 @@ public class GridManager : MonoBehaviour
 
     public void UmistitMinu(float x, float y, int cisloGridu)
     {
-        Mine mina = Instantiate(minaZasah, new Vector3(x, y, -2), Quaternion.identity);
+        Mine mina;
+        LayerMask mask = LayerMask.GetMask("Lode");
+        if (Physics2D.Raycast(new Vector2(x, y), new Vector2(0, 0), 1, mask).collider == null)
+        {
+            mina = Instantiate(minaVedle, new Vector3(x, y, -2), Quaternion.identity);
+        }
+        else
+        {
+            mina = Instantiate(minaZasah, new Vector3(x, y, -2), Quaternion.identity);
+        }
+
         if (cisloGridu == 1)
         {
             minyGridu1[new Vector2 (x, y)] = mina;
