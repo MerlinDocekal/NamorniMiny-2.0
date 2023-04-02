@@ -274,7 +274,10 @@ MonoBehaviour:
   sirka: 20
   vyska: 20
   polickoPrefab: {fileID: 7460710064277628873, guid: 3b09682003d88ce4cbc4a7ea28c458a4, type: 3}
+  minaZasah: {fileID: -7340791122980567332, guid: 17082bfa02192934698b2721d6befeaa, type: 3}
+  minaVedle: {fileID: 9134177527046293613, guid: ae5bac2930abafb4f9abcc1574791eb2, type: 3}
   kamera: {fileID: 519420032}
+  pozadovanaAkceProTileOnClick: 2
 --- !u!4 &1128391468
 Transform:
   m_ObjectHideFlags: 0
