@@ -9,20 +9,38 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    public static GridManager Instance { get; private set; }
+
     [SerializeField] private int sirka;
     [SerializeField] private int vyska;
 
-
-
     [SerializeField] private Tile polickoPrefab;
+
+
+    [SerializeField] Mine minaZasah;
+    [SerializeField] Mine minaVedle;
 
     [SerializeField] private Transform kamera;
 
-    private Dictionary<Vector2, Tile> polickaGridu1;
-    private Dictionary<Vector2, Tile> polickaGridu2;
+    public int pozadovanaAkceProTileOnClick = 0;
 
-    private void Start()
+    private Dictionary<Vector2, Tile> polickaGridu1 = new Dictionary<Vector2, Tile>();
+    private Dictionary<Vector2, Tile> polickaGridu2 = new Dictionary<Vector2, Tile>();
+
+    private Dictionary<Vector2, Mine> minyGridu1 = new Dictionary<Vector2, Mine>();
+    private Dictionary<Vector2, Mine> minyGridu2 = new Dictionary<Vector2, Mine>();
+
+    private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         GenerovatGrid();
     } 
 
@@ -55,6 +73,10 @@ public class GridManager : MonoBehaviour
 
 
         kamera.transform.position = new Vector3((float)sirka + 1f, (float)vyska / 2 - 0.5f, -20);
+        //TESTOVÁNÍ ZA PRACÍ
+        ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
+        shipManager.UmistitLod(10, 10, 7, true, 1);
+        //shipManager.lodeGrid1[new Vector2(10, 10)].transform.position = new Vector3(10, 10, 1);
     }
 
     /// <summary>
@@ -83,4 +105,28 @@ public class GridManager : MonoBehaviour
 
         return policko;
     }
+
+    public void UmistitMinu(float x, float y, int cisloGridu)
+    {
+        Mine mina;
+        LayerMask mask = LayerMask.GetMask("Lode");
+        if (Physics2D.Raycast(new Vector2(x, y), new Vector2(0, 0), 1, mask).collider == null)
+        {
+            mina = Instantiate(minaVedle, new Vector3(x, y, -2), Quaternion.identity);
+        }
+        else
+        {
+            mina = Instantiate(minaZasah, new Vector3(x, y, -2), Quaternion.identity);
+        }
+
+        if (cisloGridu == 1)
+        {
+            minyGridu1[new Vector2 (x, y)] = mina;
+        }
+        else
+        {
+            minyGridu2[new Vector2(x, y)] = mina;
+        }
+    }
+
 }
