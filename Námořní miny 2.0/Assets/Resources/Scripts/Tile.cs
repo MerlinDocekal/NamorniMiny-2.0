@@ -45,7 +45,7 @@ public class Tile : MonoBehaviour
                 break;
             case 1:
                 ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
-                shipManager.NakliknoutLod(Souradnice.x, Souradnice.y, 7, true, CisloGridu);
+                shipManager.UmistitLod(Souradnice.x, Souradnice.y, 7, true, CisloGridu);
                 break;
             case 2:
                 GridManager.Instance.UmistitMinu(Souradnice.x, Souradnice.y, 1);
