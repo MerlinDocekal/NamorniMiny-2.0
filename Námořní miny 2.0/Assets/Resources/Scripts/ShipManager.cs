@@ -5,25 +5,36 @@ using UnityEngine;
 
 public class ShipManager : MonoBehaviour
 {
-    public int velikostLodi;
-    public bool rotace;
-    public int grid;
+    public static ShipManager Instance { get; private set; }
 
     [SerializeField] private Lod lodPrefab1;
     [SerializeField] private Lod lodPrefab3;
     [SerializeField] private Lod lodPrefab5;
     [SerializeField] private Lod lodPrefab7;
 
-    public Dictionary<Vector2, Lod> lodeVelikost1Grid1 = new Dictionary<Vector2, Lod>();
-    public Dictionary<Vector2, Lod> lodeVelikost3Grid1 = new Dictionary<Vector2, Lod>();
-    public Dictionary<Vector2, Lod> lodeVelikost5Grid1 = new Dictionary<Vector2, Lod>();
-    public Dictionary<Vector2, Lod> lodeVelikost7Grid1 = new Dictionary<Vector2, Lod>();
+    public Dictionary<Vector2, Lod> lodeGrid1 = new Dictionary<Vector2, Lod>();
+    public Dictionary<Vector2, Lod> lodeGrid2 = new Dictionary<Vector2, Lod>();
+    //public Dictionary<Vector2, Lod> lodeVelikost1Grid1 = new Dictionary<Vector2, Lod>();
+    //public Dictionary<Vector2, Lod> lodeVelikost3Grid1 = new Dictionary<Vector2, Lod>();
+    //public Dictionary<Vector2, Lod> lodeVelikost5Grid1 = new Dictionary<Vector2, Lod>();
+    //public Dictionary<Vector2, Lod> lodeVelikost7Grid1 = new Dictionary<Vector2, Lod>();
 
-    public Dictionary<Vector2, Lod> lodeVelikost1Grid2 = new Dictionary<Vector2, Lod>();
-    public Dictionary<Vector2, Lod> lodeVelikost3Grid2 = new Dictionary<Vector2, Lod>();
-    public Dictionary<Vector2, Lod> lodeVelikost5Grid2 = new Dictionary<Vector2, Lod>();
-    public Dictionary<Vector2, Lod> lodeVelikost7Grid2 = new Dictionary<Vector2, Lod>();
+    //public Dictionary<Vector2, Lod> lodeVelikost1Grid2 = new Dictionary<Vector2, Lod>();
+    //public Dictionary<Vector2, Lod> lodeVelikost3Grid2 = new Dictionary<Vector2, Lod>();
+    //public Dictionary<Vector2, Lod> lodeVelikost5Grid2 = new Dictionary<Vector2, Lod>();
+    //public Dictionary<Vector2, Lod> lodeVelikost7Grid2 = new Dictionary<Vector2, Lod>();
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     /// <summary>
     /// Vytvoří loď na požadovaných souřadnicích.
@@ -33,8 +44,7 @@ public class ShipManager : MonoBehaviour
     /// <param name="velikostLodi">Požadovaná velikost lodi (1, 3, 5, 7).</param>
     /// <param name="jeLodHorizontalne">Zda-li má být loď rotována.</param>
     /// <param name="cisloGridu">Číslo Gridu (1, 2)</param>
-    /// 
-    public void NakliknoutLod(float x, float y, int velikostLodi, bool jeLodHorizontalne, int cisloGridu)
+    public void UmistitLod(float x, float y, int velikostLodi, bool jeLodHorizontalne, int cisloGridu)
     {
         Quaternion quaternion;
         bool neniMimoHraniceGridu;
@@ -74,56 +84,38 @@ public class ShipManager : MonoBehaviour
 
         if (neniMimoHraniceGridu && nekolidujeSLodi)
         {
-            
+            Lod lod = new Lod();
+            lod.RotovanoHorizontalne = jeLodHorizontalne;
             switch (velikostLodi)
             {
                 case 1:
-                    Lod lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
-                    if (cisloGridu == 1)
-                    {
-                        lodeVelikost1Grid1[new Vector2(x, y)] = lod;
-                    }
-                    else
-                    {
-                        lodeVelikost1Grid2[new Vector2(x, y)] = lod;
-                    }
+                    lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
+                    lod.Velikost = 1;
                     break;
                 case 3:
                     lod = Instantiate(lodPrefab3, new Vector3(x, y, -1), quaternion);
-                    if (cisloGridu == 1)
-                    {
-                        lodeVelikost3Grid1[new Vector2(x, y)] = lod;
-                    }
-                    else
-                    {
-                        lodeVelikost3Grid2[new Vector2(x, y)] = lod;
-                    }
+                    lod.Velikost = 3;
                     break;
                 case 5:
                     lod = Instantiate(lodPrefab5, new Vector3(x, y, -1), quaternion);
-                    if (cisloGridu == 1)
-                    {
-                        lodeVelikost5Grid1[new Vector2(x, y)] = lod;
-                    }
-                    else
-                    {
-                        lodeVelikost5Grid2[new Vector2(x, y)] = lod;
-                    }
+                    lod.Velikost = 5;
                     break;
                 case 7:
                     lod = Instantiate(lodPrefab7, new Vector3(x, y, -1), quaternion);
-                    if (cisloGridu == 1)
-                    {
-                        lodeVelikost7Grid1[new Vector2(x, y)] = lod;
-                    }
-                    else
-                    {
-                        lodeVelikost7Grid2[new Vector2(x, y)] = lod;
-                    }
+                    lod.Velikost = 7;
                     break;
 
                 default:
                     break;
+            }
+
+            if(cisloGridu == 1)
+            {
+                lodeGrid1[new Vector2(x, y)] = lod;
+            }
+            else
+            {
+                lodeGrid2[new Vector2(x, y)] = lod;
             }
             Debug.Log("Lod vytvořena");
         }
