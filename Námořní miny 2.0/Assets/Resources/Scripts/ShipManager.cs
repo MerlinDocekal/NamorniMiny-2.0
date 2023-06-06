@@ -54,6 +54,7 @@ public class ShipManager : MonoBehaviour
         {
             quaternion = Quaternion.Euler(new Vector3(0, 0, 90));
             neniMimoHraniceGridu = ((x % 23) + velikostLodi / 2) <= 19 && ((x % 23) - velikostLodi / 2) >= 0;
+            Debug.Log("Neni mimo hranice gridu: " + neniMimoHraniceGridu);
 
             LayerMask mask = LayerMask.GetMask("Lode");
             if (Physics2D.Raycast(new Vector2((x - ((float)velikostLodi / 2)), y), new Vector2(1, 0), velikostLodi, mask).collider == null)
@@ -64,6 +65,7 @@ public class ShipManager : MonoBehaviour
             {
                 nekolidujeSLodi = false;
             }
+            Debug.Log("Nekoliduje s lodi: " + nekolidujeSLodi);
         }
         else
         {
@@ -84,7 +86,7 @@ public class ShipManager : MonoBehaviour
 
         if (neniMimoHraniceGridu && nekolidujeSLodi)
         {
-            Lod lod = new Lod();
+            Lod lod = gameObject.AddComponent<Lod>();
             lod.RotovanoHorizontalne = jeLodHorizontalne;
             switch (velikostLodi)
             {
@@ -123,5 +125,92 @@ public class ShipManager : MonoBehaviour
         {
             Debug.Log("Lod nevytvořena");
         }
-    }    
+    }
+
+    /// <summary>
+    /// Skryje lodě na Gridu za grid.
+    /// </summary>
+    /// <param name="cisloGridu">Číslo Gridu (1, 2), *3* skryje na obou.</param>
+    public void SkrytLode(int cisloGridu)
+    {
+        switch (cisloGridu)
+        { 
+            case 1:           
+                foreach (Lod lod in lodeGrid1.Values)
+                {
+                    Vector3 pomocnik = lod.transform.position;
+                    pomocnik.z = 1;
+                    lod.transform.position = pomocnik;
+                }
+                break;            
+            case 2:            
+                foreach (Lod lod in lodeGrid2.Values)
+                {
+                    Vector3 pomocnik = lod.transform.position;
+                    pomocnik.z = 1;
+                    lod.transform.position = pomocnik;
+                }
+                break;            
+            case 3:            
+                foreach (Lod lod in lodeGrid1.Values)
+                {
+                    Vector3 pomocnik = lod.transform.position;
+                    pomocnik.z = 1;
+                    lod.transform.position = pomocnik;
+                }
+                foreach (Lod lod in lodeGrid2.Values)
+                {
+                    Vector3 pomocnik = lod.transform.position;
+                    pomocnik.z = 1;
+                    lod.transform.position = pomocnik;
+                }
+                break;            
+            default:          
+                break;
+            
+        }
+    }
+    /// <summary>
+    /// Zobrazí lodě na Gridu před grid.
+    /// </summary>
+    /// <param name="cisloGridu">Číslo Gridu (1, 2), *3* zobrazí na obou.</param>
+    public void ZobrazitLode(int cisloGridu)
+    {
+        switch (cisloGridu)
+        {
+            case 1:
+                foreach (Lod lod in lodeGrid1.Values)
+                {
+                    Vector3 pomocnik = lod.transform.position;
+                    pomocnik.z = -1;
+                    lod.transform.position = pomocnik;
+                }
+                break;
+            case 2:
+                foreach (Lod lod in lodeGrid2.Values)
+                {
+                    Vector3 pomocnik = lod.transform.position;
+                    pomocnik.z = -1;
+                    lod.transform.position = pomocnik;
+                }
+                break;
+            case 3:
+                foreach (Lod lod in lodeGrid1.Values)
+                {
+                    Vector3 pomocnik = lod.transform.position;
+                    pomocnik.z = -1;
+                    lod.transform.position = pomocnik;
+                }
+                foreach (Lod lod in lodeGrid2.Values)
+                {
+                    Vector3 pomocnik = lod.transform.position;
+                    pomocnik.z = -1;
+                    lod.transform.position = pomocnik;
+                }
+                break;
+            default:
+                break;
+
+        }
+    }
 }

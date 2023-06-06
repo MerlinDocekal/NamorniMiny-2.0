@@ -73,10 +73,16 @@ public class GridManager : MonoBehaviour
 
 
         kamera.transform.position = new Vector3((float)sirka + 1f, (float)vyska / 2 - 0.5f, -20);
+
+
+
+
         //TESTOVÁNÍ ZA PRACÍ
         ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
         shipManager.UmistitLod(10, 10, 7, true, 1);
+        shipManager.UmistitLod(33, 10, 7, true, 2);
         //shipManager.lodeGrid1[new Vector2(10, 10)].transform.position = new Vector3(10, 10, 1);
+        //TESTOVÁNÍ ZA PRACÍ
     }
 
     /// <summary>
