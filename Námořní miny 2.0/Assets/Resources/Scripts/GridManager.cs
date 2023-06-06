@@ -11,8 +11,8 @@ public class GridManager : MonoBehaviour
 {
     public static GridManager Instance { get; private set; }
 
-    [SerializeField] private int sirka;
-    [SerializeField] private int vyska;
+    private int sirka = 20;
+    private int vyska = 20;
 
     [SerializeField] private Tile polickoPrefab;
 
@@ -21,8 +21,6 @@ public class GridManager : MonoBehaviour
     [SerializeField] Mine minaVedle;
 
     [SerializeField] private Transform kamera;
-
-    public int pozadovanaAkceProTileOnClick = 0;
 
     private Dictionary<Vector2, Tile> polickaGridu1 = new Dictionary<Vector2, Tile>();
     private Dictionary<Vector2, Tile> polickaGridu2 = new Dictionary<Vector2, Tile>();
@@ -78,9 +76,8 @@ public class GridManager : MonoBehaviour
 
 
         //TESTOVÁNÍ ZA PRACÍ
-        ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
-        shipManager.UmistitLod(10, 10, 7, true, 1);
-        shipManager.UmistitLod(33, 10, 7, true, 2);
+        //ShipManager.Instance.UmistitLod(10, 10, 7, true, 1);
+        //ShipManager.Instance.UmistitLod(33, 10, 7, true, 2);
         //shipManager.lodeGrid1[new Vector2(10, 10)].transform.position = new Vector3(10, 10, 1);
         //TESTOVÁNÍ ZA PRACÍ
     }

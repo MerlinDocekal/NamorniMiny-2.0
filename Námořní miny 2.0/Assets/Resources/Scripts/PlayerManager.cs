@@ -7,7 +7,6 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance { get; private set; }
 
     public bool HrajeHrac1 { get; private set; }
-    private ShipManager shipManager;
 
     private void Awake()
     {
@@ -20,23 +19,22 @@ public class PlayerManager : MonoBehaviour
             Instance = this;
         }
         HrajeHrac1 = true;
-        shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
     }
 
-    public void PrepnoutHrac()
+    public void PrepnoutHrace()
     {
         HrajeHrac1 = !HrajeHrac1;
         Debug.Log("Hraje hr·Ë 1: " + HrajeHrac1);
 
         if(HrajeHrac1)
         {
-            shipManager.SkrytLode(2);
-            shipManager.ZobrazitLode(1);
+            ShipManager.Instance.SkrytLode(2);
+            ShipManager.Instance.ZobrazitLode(1);
         }
         else
         {
-            shipManager.SkrytLode(1);
-            shipManager.ZobrazitLode(2);
+            ShipManager.Instance.SkrytLode(1);
+            ShipManager.Instance.ZobrazitLode(2);
         }
     }
 }

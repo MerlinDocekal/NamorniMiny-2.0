@@ -39,13 +39,12 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        switch (GridManager.Instance.pozadovanaAkceProTileOnClick)
+        switch (UIManager.Instance.PozadovanaAkceProTileOnClick)
         {
             case 0:
                 break;
             case 1:
-                ShipManager shipManager = GameObject.FindObjectOfType(typeof(ShipManager)) as ShipManager;
-                shipManager.UmistitLod(Souradnice.x, Souradnice.y, 7, true, CisloGridu);
+                ShipManager.Instance.UmistitLod(Souradnice.x, Souradnice.y, UIManager.Instance.pozadovanaVelikostLodiProTileOnClick, UIManager.Instance.jePozadovanaRotaceLodiHorizontalne, CisloGridu);
                 break;
             case 2:
                 GridManager.Instance.UmistitMinu(Souradnice.x, Souradnice.y, 1);
