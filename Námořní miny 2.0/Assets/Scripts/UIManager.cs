@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public void Play()
     {
@@ -17,6 +17,6 @@ public class MenuManager : MonoBehaviour
         Debug.Log("ukonèení hry");
     }
 
-    
+
 
 }
