@@ -71,15 +71,6 @@ public class GridManager : MonoBehaviour
 
 
         kamera.transform.position = new Vector3((float)sirka + 1f, (float)vyska / 2 - 0.5f, -20);
-
-
-
-
-        //TESTOVÁNÍ ZA PRACÍ
-        //ShipManager.Instance.UmistitLod(10, 10, 7, true, 1);
-        //ShipManager.Instance.UmistitLod(33, 10, 7, true, 2);
-        //shipManager.lodeGrid1[new Vector2(10, 10)].transform.position = new Vector3(10, 10, 1);
-        //TESTOVÁNÍ ZA PRACÍ
     }
 
     /// <summary>
@@ -113,22 +104,26 @@ public class GridManager : MonoBehaviour
     {
         Mine mina;
         LayerMask mask = LayerMask.GetMask("Lode");
-        if (Physics2D.Raycast(new Vector2(x, y), new Vector2(0, 0), 1, mask).collider == null)
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(new Vector2(x, y), new Vector2(0, 0), 1, mask);
+        if (raycastHit2D.collider == null)
         {
             mina = Instantiate(minaVedle, new Vector3(x, y, -2), Quaternion.identity);
+            if (cisloGridu == 1)
+            {
+                minyGridu1[new Vector2(x, y)] = mina;
+            }
+            else
+            {
+                minyGridu2[new Vector2(x, y)] = mina;
+            }
+            Debug.Log("Loï nezasažena.");
         }
         else
         {
             mina = Instantiate(minaZasah, new Vector3(x, y, -2), Quaternion.identity);
-        }
-
-        if (cisloGridu == 1)
-        {
-            minyGridu1[new Vector2 (x, y)] = mina;
-        }
-        else
-        {
-            minyGridu2[new Vector2(x, y)] = mina;
+            Lod lod = raycastHit2D.collider.gameObject.GetComponent<Lod>();
+            lod.ZasahnoutLod();
+            Debug.Log("Loï zasažena.");
         }
     }
 

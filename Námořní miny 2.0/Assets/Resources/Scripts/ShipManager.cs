@@ -54,7 +54,7 @@ public class ShipManager : MonoBehaviour
         {
             quaternion = Quaternion.Euler(new Vector3(0, 0, 90));
             neniMimoHraniceGridu = ((x % 23) + velikostLodi / 2) <= 19 && ((x % 23) - velikostLodi / 2) >= 0;
-            Debug.Log("Neni mimo hranice gridu: " + neniMimoHraniceGridu);
+            //Debug.Log("Neni mimo hranice gridu: " + neniMimoHraniceGridu);
 
             LayerMask mask = LayerMask.GetMask("Lode");
             if (Physics2D.Raycast(new Vector2((x - ((float)velikostLodi / 2)), y), new Vector2(1, 0), velikostLodi, mask).collider == null)
@@ -65,7 +65,7 @@ public class ShipManager : MonoBehaviour
             {
                 nekolidujeSLodi = false;
             }
-            Debug.Log("Nekoliduje s lodi: " + nekolidujeSLodi);
+            //Debug.Log("Nekoliduje s lodi: " + nekolidujeSLodi);
         }
         else
         {
@@ -81,37 +81,36 @@ public class ShipManager : MonoBehaviour
             {
                 nekolidujeSLodi = false;
             }
-
         }
 
         if (neniMimoHraniceGridu && nekolidujeSLodi)
         {
             Lod lod = gameObject.AddComponent<Lod>();
-            lod.RotovanoHorizontalne = jeLodHorizontalne;
             switch (velikostLodi)
             {
                 case 1:
                     lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
-                    lod.Velikost = 1;
                     break;
                 case 3:
                     lod = Instantiate(lodPrefab3, new Vector3(x, y, -1), quaternion);
-                    lod.Velikost = 3;
                     break;
                 case 5:
                     lod = Instantiate(lodPrefab5, new Vector3(x, y, -1), quaternion);
-                    lod.Velikost = 5;
                     break;
                 case 7:
                     lod = Instantiate(lodPrefab7, new Vector3(x, y, -1), quaternion);
-                    lod.Velikost = 7;
                     break;
-
                 default:
                     break;
             }
 
-            if(cisloGridu == 1)
+            //Tohle je ass ale idk jak to udělat jinak
+            lod.Velikost = velikostLodi;
+            lod.RotovanoHorizontalne = jeLodHorizontalne;
+            lod.NastavitHP();
+            //
+
+            if (cisloGridu == 1)
             {
                 lodeGrid1[new Vector2(x, y)] = lod;
             }
@@ -119,11 +118,11 @@ public class ShipManager : MonoBehaviour
             {
                 lodeGrid2[new Vector2(x, y)] = lod;
             }
-            Debug.Log("Lod vytvořena");
+            //Debug.Log("Lod vytvořena");
         }
         else
         {
-            Debug.Log("Lod nevytvořena");
+            //Debug.Log("Lod nevytvořena");
         }
     }
 
