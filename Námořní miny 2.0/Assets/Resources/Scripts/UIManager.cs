@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScreen");
         print("jj");
     }
 
@@ -77,3 +77,4 @@ public class UIManager : MonoBehaviour
         Application.Quit();
         Debug.Log("ukonèení hry");
     }
+}
