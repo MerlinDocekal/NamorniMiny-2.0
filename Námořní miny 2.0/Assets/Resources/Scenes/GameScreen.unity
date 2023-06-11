@@ -177,6 +177,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "P\u0159epnout hr\xE1\u010De"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonPrepnoutHrace_1
@@ -211,11 +215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 118
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -259,7 +263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -165.29001
+      value: -163
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -393,6 +397,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Rotate
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonRotace
@@ -427,11 +435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 74.18
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -475,7 +483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.9200188
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -585,6 +593,18 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonMina
@@ -619,11 +639,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 74.18
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -667,11 +687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.92002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -415.53
+      value: -418
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -731,6 +751,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 5"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonUmistitLod5_1
@@ -765,11 +789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -813,7 +837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -499.06
+      value: -504
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -872,6 +896,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 3"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonUmistitLod3_1
@@ -906,11 +934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -954,7 +982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -663.93
+      value: -674
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1184,6 +1212,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "P\u0159epnout hr\xE1\u010De"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonPrepnoutHrace_2
@@ -1218,11 +1250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 118
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -1266,7 +1298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 167.13
+      value: 163
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1419,6 +1451,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 1"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonUmistitLod1_1
@@ -1453,11 +1489,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -1501,7 +1537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -828.82
+      value: -854
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1601,6 +1637,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 7"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonUmistitLod7_2
@@ -1635,11 +1675,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -1683,7 +1723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 340
+      value: 336
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1840,6 +1880,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 3"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonUmistitLod3_2
@@ -1874,11 +1918,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -1922,7 +1966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 665.76996
+      value: 674
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2038,6 +2082,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 5"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonUmistitLod5_2
@@ -2072,11 +2120,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -2120,7 +2168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 500.90002
+      value: 504
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2184,6 +2232,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 7"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonUmistitLod7_1
@@ -2218,11 +2270,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -2266,7 +2318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -338.15997
+      value: -336
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2325,6 +2377,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Um\xEDstit lo\u010F: 1"
       objectReference: {fileID: 0}
+    - target: {fileID: 4269239649947650253, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383288717313478161, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_Name
       value: ButtonUmistitLod1_2
@@ -2359,11 +2415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_LocalScale.x
@@ -2407,7 +2463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 830.66
+      value: 854
       objectReference: {fileID: 0}
     - target: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
       propertyPath: m_AnchoredPosition.y
