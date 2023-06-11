@@ -22,11 +22,20 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private Transform kamera;
 
-    private Dictionary<Vector2, Tile> polickaGridu1 = new Dictionary<Vector2, Tile>();
-    private Dictionary<Vector2, Tile> polickaGridu2 = new Dictionary<Vector2, Tile>();
+    private Dictionary<Vector2, Tile> polickaGrid1Dic = new Dictionary<Vector2, Tile>();
+    private Dictionary<Vector2, Tile> polickaGrid2Dic = new Dictionary<Vector2, Tile>();
 
-    private Dictionary<Vector2, Mine> minyGridu1 = new Dictionary<Vector2, Mine>();
-    private Dictionary<Vector2, Mine> minyGridu2 = new Dictionary<Vector2, Mine>();
+    private Dictionary<Vector2, Mine> minyGrid1Dic = new Dictionary<Vector2, Mine>();
+    private Dictionary<Vector2, Mine> minyGrid2Dic = new Dictionary<Vector2, Mine>();
+
+    private GameObject grid1;
+    private GameObject grid2;
+
+    private GameObject minyGrid1;
+    private GameObject minyGrid2;
+
+    private GameObject polickaGrid1;
+    private GameObject polickaGrid2;
 
     private void Awake()
     {
@@ -44,8 +53,23 @@ public class GridManager : MonoBehaviour
 
     void GenerovatGrid()
     {
-        polickaGridu1 = new Dictionary<Vector2, Tile>();
-        polickaGridu2 = new Dictionary<Vector2, Tile>();
+        polickaGrid1Dic = new Dictionary<Vector2, Tile>();
+        polickaGrid2Dic = new Dictionary<Vector2, Tile>();
+
+        grid1 = new GameObject("Grid1");
+        grid1.transform.SetParent(GameObject.Find("GridManager").transform);
+        grid2 = new GameObject("Grid2");
+        grid2.transform.SetParent(GameObject.Find("GridManager").transform);
+
+        polickaGrid1 = new GameObject("PolickaGrid1");
+        polickaGrid1.transform.SetParent(grid1.transform);
+        polickaGrid2 = new GameObject("PolickaGrid2");
+        polickaGrid2.transform.SetParent(grid2.transform);
+
+        minyGrid1 = new GameObject("MinyGrid1");
+        minyGrid1.transform.SetParent(grid1.transform);
+        minyGrid2 = new GameObject("MinyGrid2");
+        minyGrid2.transform.SetParent(grid2.transform);
 
         for (int x = 0; x < sirka; x++)
         {
@@ -56,7 +80,8 @@ public class GridManager : MonoBehaviour
                 vytvorenePolicko.name = $"Tile_1 {x} {y}";
                 vytvorenePolicko.NastavitSouradnice(new Vector2(x, y));
                 vytvorenePolicko.CisloGridu = 1;
-                polickaGridu1[new Vector2(x, y)] = vytvorenePolicko;
+                vytvorenePolicko.transform.SetParent(polickaGrid1.transform);
+                polickaGrid1Dic[new Vector2(x, y)] = vytvorenePolicko;
 
 
 
@@ -65,7 +90,8 @@ public class GridManager : MonoBehaviour
                 vytvorenePolicko.name = $"Tile_2 {x} {y}";
                 vytvorenePolicko.NastavitSouradnice(new Vector2(x + 23, y));
                 vytvorenePolicko.CisloGridu = 2;
-                polickaGridu2[new Vector2(x, y)] = vytvorenePolicko;
+                vytvorenePolicko.transform.SetParent(polickaGrid2.transform);
+                polickaGrid2Dic[new Vector2(x, y)] = vytvorenePolicko;
             }
         }
 
@@ -84,14 +110,14 @@ public class GridManager : MonoBehaviour
         Tile policko = null;
         if (cisloGridu == 1)
         {
-            if (polickaGridu1.TryGetValue(pozice, out var tile))
+            if (polickaGrid1Dic.TryGetValue(pozice, out var tile))
             {
                 policko = tile;
             }
         }
         else if (cisloGridu == 2)
         {
-            if (polickaGridu2.TryGetValue(pozice, out var tile))
+            if (polickaGrid2Dic.TryGetValue(pozice, out var tile))
             {
                 policko = tile;
             }
@@ -110,11 +136,13 @@ public class GridManager : MonoBehaviour
             mina = Instantiate(minaVedle, new Vector3(x, y, -2), Quaternion.identity);
             if (cisloGridu == 1)
             {
-                minyGridu1[new Vector2(x, y)] = mina;
+                minyGrid1Dic[new Vector2(x, y)] = mina;
+                mina.transform.SetParent(minyGrid1.transform);
             }
             else
             {
-                minyGridu2[new Vector2(x, y)] = mina;
+                minyGrid2Dic[new Vector2(x, y)] = mina;
+                mina.transform.SetParent(minyGrid2.transform);
             }
             Debug.Log("Loï nezasažena.");
         }
@@ -122,6 +150,7 @@ public class GridManager : MonoBehaviour
         {
             mina = Instantiate(minaZasah, new Vector3(x, y, -2), Quaternion.identity);
             Lod lod = raycastHit2D.collider.gameObject.GetComponent<Lod>();
+            mina.transform.SetParent(lod.transform);
             lod.ZasahnoutLod();
             Debug.Log("Loï zasažena.");
         }

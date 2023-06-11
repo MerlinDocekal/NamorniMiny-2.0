@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ShipManager : MonoBehaviour
 {
@@ -12,17 +13,11 @@ public class ShipManager : MonoBehaviour
     [SerializeField] private Lod lodPrefab5;
     [SerializeField] private Lod lodPrefab7;
 
-    public Dictionary<Vector2, Lod> lodeGrid1 = new Dictionary<Vector2, Lod>();
-    public Dictionary<Vector2, Lod> lodeGrid2 = new Dictionary<Vector2, Lod>();
-    //public Dictionary<Vector2, Lod> lodeVelikost1Grid1 = new Dictionary<Vector2, Lod>();
-    //public Dictionary<Vector2, Lod> lodeVelikost3Grid1 = new Dictionary<Vector2, Lod>();
-    //public Dictionary<Vector2, Lod> lodeVelikost5Grid1 = new Dictionary<Vector2, Lod>();
-    //public Dictionary<Vector2, Lod> lodeVelikost7Grid1 = new Dictionary<Vector2, Lod>();
+    public Dictionary<Vector2, Lod> lodeGrid1Dic = new Dictionary<Vector2, Lod>();
+    public Dictionary<Vector2, Lod> lodeGrid2Dic = new Dictionary<Vector2, Lod>();
 
-    //public Dictionary<Vector2, Lod> lodeVelikost1Grid2 = new Dictionary<Vector2, Lod>();
-    //public Dictionary<Vector2, Lod> lodeVelikost3Grid2 = new Dictionary<Vector2, Lod>();
-    //public Dictionary<Vector2, Lod> lodeVelikost5Grid2 = new Dictionary<Vector2, Lod>();
-    //public Dictionary<Vector2, Lod> lodeVelikost7Grid2 = new Dictionary<Vector2, Lod>();
+    public GameObject lodeGrid1;
+    public GameObject lodeGrid2;
 
     private void Awake()
     {
@@ -34,6 +29,11 @@ public class ShipManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        lodeGrid1 = new GameObject("LodeGrid1");
+        lodeGrid1.transform.SetParent(GameObject.Find("ShipManager").transform);
+        lodeGrid2 = new GameObject("LodeGrid2");
+        lodeGrid2.transform.SetParent(GameObject.Find("ShipManager").transform);
     }
 
     /// <summary>
@@ -105,18 +105,18 @@ public class ShipManager : MonoBehaviour
             }
 
             //Tohle je ass ale idk jak to udělat jinak
-            lod.Velikost = velikostLodi;
-            lod.RotovanoHorizontalne = jeLodHorizontalne;
-            lod.NastavitHP();
+            lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
             //
 
             if (cisloGridu == 1)
             {
-                lodeGrid1[new Vector2(x, y)] = lod;
+                lodeGrid1Dic[new Vector2(x, y)] = lod;
+                lod.transform.SetParent(lodeGrid1.transform);
             }
             else
             {
-                lodeGrid2[new Vector2(x, y)] = lod;
+                lodeGrid2Dic[new Vector2(x, y)] = lod;
+                lod.transform.SetParent(lodeGrid2.transform);
             }
             //Debug.Log("Lod vytvořena");
         }
@@ -135,7 +135,7 @@ public class ShipManager : MonoBehaviour
         switch (cisloGridu)
         { 
             case 1:           
-                foreach (Lod lod in lodeGrid1.Values)
+                foreach (Lod lod in lodeGrid1Dic.Values)
                 {
                     Vector3 pomocnik = lod.transform.position;
                     pomocnik.z = 1;
@@ -143,7 +143,7 @@ public class ShipManager : MonoBehaviour
                 }
                 break;            
             case 2:            
-                foreach (Lod lod in lodeGrid2.Values)
+                foreach (Lod lod in lodeGrid2Dic.Values)
                 {
                     Vector3 pomocnik = lod.transform.position;
                     pomocnik.z = 1;
@@ -151,13 +151,13 @@ public class ShipManager : MonoBehaviour
                 }
                 break;            
             case 3:            
-                foreach (Lod lod in lodeGrid1.Values)
+                foreach (Lod lod in lodeGrid1Dic.Values)
                 {
                     Vector3 pomocnik = lod.transform.position;
                     pomocnik.z = 1;
                     lod.transform.position = pomocnik;
                 }
-                foreach (Lod lod in lodeGrid2.Values)
+                foreach (Lod lod in lodeGrid2Dic.Values)
                 {
                     Vector3 pomocnik = lod.transform.position;
                     pomocnik.z = 1;
@@ -178,7 +178,7 @@ public class ShipManager : MonoBehaviour
         switch (cisloGridu)
         {
             case 1:
-                foreach (Lod lod in lodeGrid1.Values)
+                foreach (Lod lod in lodeGrid1Dic.Values)
                 {
                     Vector3 pomocnik = lod.transform.position;
                     pomocnik.z = -1;
@@ -186,7 +186,7 @@ public class ShipManager : MonoBehaviour
                 }
                 break;
             case 2:
-                foreach (Lod lod in lodeGrid2.Values)
+                foreach (Lod lod in lodeGrid2Dic.Values)
                 {
                     Vector3 pomocnik = lod.transform.position;
                     pomocnik.z = -1;
@@ -194,13 +194,13 @@ public class ShipManager : MonoBehaviour
                 }
                 break;
             case 3:
-                foreach (Lod lod in lodeGrid1.Values)
+                foreach (Lod lod in lodeGrid1Dic.Values)
                 {
                     Vector3 pomocnik = lod.transform.position;
                     pomocnik.z = -1;
                     lod.transform.position = pomocnik;
                 }
-                foreach (Lod lod in lodeGrid2.Values)
+                foreach (Lod lod in lodeGrid2Dic.Values)
                 {
                     Vector3 pomocnik = lod.transform.position;
                     pomocnik.z = -1;
