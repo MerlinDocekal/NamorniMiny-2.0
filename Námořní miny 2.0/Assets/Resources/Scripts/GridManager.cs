@@ -4,9 +4,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-//Zdroj: https://www.youtube.com/watch?v=kkAjpQAM-jE
-
-
 public class GridManager : MonoBehaviour
 {
     public static GridManager Instance { get; private set; }
@@ -22,11 +19,11 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private Transform kamera;
 
-    private Dictionary<Vector2, Tile> polickaGrid1Dic = new Dictionary<Vector2, Tile>();
-    private Dictionary<Vector2, Tile> polickaGrid2Dic = new Dictionary<Vector2, Tile>();
+    public Dictionary<Vector2, Tile> polickaGrid1Dic = new Dictionary<Vector2, Tile>();
+    public Dictionary<Vector2, Tile> polickaGrid2Dic = new Dictionary<Vector2, Tile>();
 
-    private Dictionary<Vector2, Mine> minyGrid1Dic = new Dictionary<Vector2, Mine>();
-    private Dictionary<Vector2, Mine> minyGrid2Dic = new Dictionary<Vector2, Mine>();
+    public Dictionary<Vector2, Mine> minyGrid1Dic = new Dictionary<Vector2, Mine>();
+    public Dictionary<Vector2, Mine> minyGrid2Dic = new Dictionary<Vector2, Mine>();
 
     private GameObject grid1;
     private GameObject grid2;

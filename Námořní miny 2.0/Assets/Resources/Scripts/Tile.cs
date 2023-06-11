@@ -4,11 +4,7 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
-
-
-//Zdroj: https://www.youtube.com/watch?v=kkAjpQAM-jE
 
 
 public class Tile : MonoBehaviour

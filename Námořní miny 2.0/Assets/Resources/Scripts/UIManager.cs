@@ -66,6 +66,7 @@ public class UIManager : MonoBehaviour
     {
         PozadovanaAkceProTileOnClick = 2;
     }
+
     public void Play()
     {
         SceneManager.LoadScene("GameScreen");

@@ -19,6 +19,16 @@ public class ShipManager : MonoBehaviour
     public GameObject lodeGrid1;
     public GameObject lodeGrid2;
 
+    private int pocetLodi1_1 = 5;
+    private int pocetLodi3_1 = 4;
+    private int pocetLodi5_1 = 3;
+    private int pocetLodi7_1 = 2;
+
+    private int pocetLodi1_2 = 5;
+    private int pocetLodi3_2 = 4;
+    private int pocetLodi5_2 = 3;
+    private int pocetLodi7_2 = 2;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -90,34 +100,140 @@ public class ShipManager : MonoBehaviour
             {
                 case 1:
                     lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
+                    lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
+                    if (cisloGridu == 1)
+                    {
+                        lodeGrid1Dic[new Vector2(x, y)] = lod;
+                        lod.transform.SetParent(lodeGrid1.transform);
+                        pocetLodi1_1--;
+                        Debug.Log("Počet lodí celkem: " + (pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1));
+                        if (pocetLodi1_1 == 0)
+                        {
+                            GameObject.Find("ButtonUmistitLod1_1").SetActive(false);
+                            if((pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1) == 0)
+                            {
+                                GameObject.Find("ButtonPrepnoutHrace_1").SetActive(true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        lodeGrid2Dic[new Vector2(x, y)] = lod;
+                        lod.transform.SetParent(lodeGrid2.transform);
+                        pocetLodi1_2--;
+                        if (pocetLodi1_2 == 0)
+                        {
+                            GameObject.Find("ButtonUmistitLod1_2").SetActive(false);
+                            if (pocetLodi1_2 + pocetLodi3_2 + pocetLodi5_2 + pocetLodi7_2 == 0)
+                            {
+                                GameObject.Find("ButtonPrepnoutHrace_2").SetActive(true);
+                            }
+                        }
+                    }
                     break;
                 case 3:
                     lod = Instantiate(lodPrefab3, new Vector3(x, y, -1), quaternion);
+                    lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
+                    if (cisloGridu == 1)
+                    {
+                        lodeGrid1Dic[new Vector2(x, y)] = lod;
+                        lod.transform.SetParent(lodeGrid1.transform);
+                        pocetLodi3_1--;
+                        Debug.Log("Počet lodí celkem: " + (pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1));
+                        if (pocetLodi3_1 == 0)
+                        {
+                            GameObject.Find("ButtonUmistitLod3_1").SetActive(false);
+                            if ((pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1) == 0)
+                            {
+                                GameObject.Find("ButtonPrepnoutHrace_1").SetActive(true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        lodeGrid2Dic[new Vector2(x, y)] = lod;
+                        lod.transform.SetParent(lodeGrid2.transform);
+                        pocetLodi3_2--;
+                        if (pocetLodi3_2 == 0)
+                        {
+                            GameObject.Find("ButtonUmistitLod3_2").SetActive(false);
+                            if (pocetLodi1_2 + pocetLodi3_2 + pocetLodi5_2 + pocetLodi7_2 == 0)
+                            {
+                                GameObject.Find("ButtonPrepnoutHrace_2").SetActive(true);
+                            }
+                        }
+                    }
                     break;
                 case 5:
                     lod = Instantiate(lodPrefab5, new Vector3(x, y, -1), quaternion);
+                    lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
+                    if (cisloGridu == 1)
+                    {
+                        lodeGrid1Dic[new Vector2(x, y)] = lod;
+                        lod.transform.SetParent(lodeGrid1.transform);
+                        pocetLodi5_1--;
+                        Debug.Log("Počet lodí celkem: " + (pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1));
+                        if (pocetLodi5_1 == 0)
+                        {
+                            GameObject.Find("ButtonUmistitLod5_1").SetActive(false);
+                            if ((pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1) == 0)
+                            {
+                                GameObject.Find("ButtonPrepnoutHrace_1").SetActive(true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        lodeGrid2Dic[new Vector2(x, y)] = lod;
+                        lod.transform.SetParent(lodeGrid2.transform);
+                        pocetLodi5_2--;
+                        if (pocetLodi5_2 == 0)
+                        {
+                            GameObject.Find("ButtonUmistitLod5_2").SetActive(false);
+                            if (pocetLodi1_2 + pocetLodi3_2 + pocetLodi5_2 + pocetLodi7_2 == 0)
+                            {
+                                GameObject.Find("ButtonPrepnoutHrace_2").SetActive(true);
+                            }
+                        }
+                    }
                     break;
                 case 7:
                     lod = Instantiate(lodPrefab7, new Vector3(x, y, -1), quaternion);
+                    lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
+                    if (cisloGridu == 1)
+                    {
+                        lodeGrid1Dic[new Vector2(x, y)] = lod;
+                        lod.transform.SetParent(lodeGrid1.transform);
+                        pocetLodi7_1--;
+                        Debug.Log("Počet lodí celkem: " + (pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1));
+                        if (pocetLodi7_1 == 0)
+                        {
+                            GameObject.Find("ButtonUmistitLod7_1").SetActive(false);
+                            if ((pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1) == 0)
+                            {
+                                GameObject.Find("ButtonPrepnoutHrace_1").SetActive(true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        lodeGrid2Dic[new Vector2(x, y)] = lod;
+                        lod.transform.SetParent(lodeGrid2.transform);
+                        pocetLodi7_2--;
+                        if (pocetLodi7_2 == 0)
+                        {
+                            GameObject.Find("ButtonUmistitLod7_2").SetActive(false);
+                            if (pocetLodi1_2 + pocetLodi3_2 + pocetLodi5_2 + pocetLodi7_2 == 0)
+                            {
+                                GameObject.Find("ButtonPrepnoutHrace_2").SetActive(true);
+                            }
+                        }
+                    }
                     break;
                 default:
                     break;
             }
 
-            //Tohle je ass ale idk jak to udělat jinak
-            lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
-            //
-
-            if (cisloGridu == 1)
-            {
-                lodeGrid1Dic[new Vector2(x, y)] = lod;
-                lod.transform.SetParent(lodeGrid1.transform);
-            }
-            else
-            {
-                lodeGrid2Dic[new Vector2(x, y)] = lod;
-                lod.transform.SetParent(lodeGrid2.transform);
-            }
             //Debug.Log("Lod vytvořena");
         }
         else
@@ -133,36 +249,29 @@ public class ShipManager : MonoBehaviour
     public void SkrytLode(int cisloGridu)
     {
         switch (cisloGridu)
-        { 
-            case 1:           
-                foreach (Lod lod in lodeGrid1Dic.Values)
-                {
-                    Vector3 pomocnik = lod.transform.position;
-                    pomocnik.z = 1;
-                    lod.transform.position = pomocnik;
-                }
-                break;            
-            case 2:            
-                foreach (Lod lod in lodeGrid2Dic.Values)
-                {
-                    Vector3 pomocnik = lod.transform.position;
-                    pomocnik.z = 1;
-                    lod.transform.position = pomocnik;
-                }
-                break;            
-            case 3:            
-                foreach (Lod lod in lodeGrid1Dic.Values)
-                {
-                    Vector3 pomocnik = lod.transform.position;
-                    pomocnik.z = 1;
-                    lod.transform.position = pomocnik;
-                }
-                foreach (Lod lod in lodeGrid2Dic.Values)
-                {
-                    Vector3 pomocnik = lod.transform.position;
-                    pomocnik.z = 1;
-                    lod.transform.position = pomocnik;
-                }
+        {
+            case 1:
+                GameObject lodeGrid1 = GameObject.Find("LodeGrid1");
+                Vector3 pomocnik = lodeGrid1.transform.position;
+                pomocnik.z = 1;
+                lodeGrid1.transform.position = pomocnik;
+                break;
+            case 2:
+                GameObject lodeGrid2 = GameObject.Find("LodeGrid2");
+                pomocnik = lodeGrid2.transform.position;
+                pomocnik.z = 1;
+                lodeGrid2.transform.position = pomocnik;
+                break;
+            case 3:
+                lodeGrid1 = GameObject.Find("LodeGrid1");
+                pomocnik = lodeGrid1.transform.position;
+                pomocnik.z = 1;
+                lodeGrid1.transform.position = pomocnik;
+
+                lodeGrid2 = GameObject.Find("LodeGrid2");
+                pomocnik = lodeGrid2.transform.position;
+                pomocnik.z = 1;
+                lodeGrid2.transform.position = pomocnik;
                 break;            
             default:          
                 break;
@@ -178,34 +287,27 @@ public class ShipManager : MonoBehaviour
         switch (cisloGridu)
         {
             case 1:
-                foreach (Lod lod in lodeGrid1Dic.Values)
-                {
-                    Vector3 pomocnik = lod.transform.position;
-                    pomocnik.z = -1;
-                    lod.transform.position = pomocnik;
-                }
+                GameObject lodeGrid1 = GameObject.Find("LodeGrid1");
+                Vector3 pomocnik = lodeGrid1.transform.position;
+                pomocnik.z = -1;
+                lodeGrid1.transform.position = pomocnik;
                 break;
             case 2:
-                foreach (Lod lod in lodeGrid2Dic.Values)
-                {
-                    Vector3 pomocnik = lod.transform.position;
-                    pomocnik.z = -1;
-                    lod.transform.position = pomocnik;
-                }
+                GameObject lodeGrid2 = GameObject.Find("LodeGrid2");
+                pomocnik = lodeGrid2.transform.position;
+                pomocnik.z = -1;
+                lodeGrid2.transform.position = pomocnik;
                 break;
             case 3:
-                foreach (Lod lod in lodeGrid1Dic.Values)
-                {
-                    Vector3 pomocnik = lod.transform.position;
-                    pomocnik.z = -1;
-                    lod.transform.position = pomocnik;
-                }
-                foreach (Lod lod in lodeGrid2Dic.Values)
-                {
-                    Vector3 pomocnik = lod.transform.position;
-                    pomocnik.z = -1;
-                    lod.transform.position = pomocnik;
-                }
+                lodeGrid1 = GameObject.Find("LodeGrid1");
+                pomocnik = lodeGrid1.transform.position;
+                pomocnik.z = -1;
+                lodeGrid1.transform.position = pomocnik;
+
+                lodeGrid2 = GameObject.Find("LodeGrid2");
+                pomocnik = lodeGrid2.transform.position;
+                pomocnik.z = -1;
+                lodeGrid2.transform.position = pomocnik;
                 break;
             default:
                 break;

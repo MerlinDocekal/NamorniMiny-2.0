@@ -135,12 +135,24 @@ PrefabInstance:
       value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 6733780055303981290, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733780055303981290, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
       propertyPath: m_fontSize
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6733780055303981290, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
       propertyPath: m_fontSizeBase
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733780055303981291, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733780055303981293, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6733780056618824681, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -438,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6733780056618824694, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00011063
+      value: -0.00011062622
       objectReference: {fileID: 0}
     - target: {fileID: 6733780056618824694, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
       propertyPath: m_AnchoredPosition.y

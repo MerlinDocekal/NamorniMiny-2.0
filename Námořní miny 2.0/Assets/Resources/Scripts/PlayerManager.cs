@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
 
     public bool HrajeHrac1 { get; private set; }
 
-    private void Awake()
+    private void Start()
     {
         if (Instance != null && Instance != this)
         {
@@ -19,6 +19,8 @@ public class PlayerManager : MonoBehaviour
             Instance = this;
         }
         HrajeHrac1 = true;
+        
+        NaklikavaniLodiHrace1();
     }
 
     public void PrepnoutHrace()
@@ -36,5 +38,20 @@ public class PlayerManager : MonoBehaviour
             ShipManager.Instance.SkrytLode(1);
             ShipManager.Instance.ZobrazitLode(2);
         }
+    }
+
+    private void NaklikavaniLodiHrace1()
+    {
+        GameObject.Find("Grid2").SetActive(false);
+        GameObject.Find("TlacitkaHrace2").SetActive(false);
+        GameObject.Find("NeutralniTlacitka").SetActive(false);
+        GameObject.Find("ButtonPrepnoutHrace_1").SetActive(false);
+    }
+
+    private void NaklikavaniLodiHrace2()
+    {
+        GameObject.Find("Grid1").SetActive(false);
+        GameObject.Find("TlacitkaHrace1").SetActive(false);
+        GameObject.Find("NeutralniTlacitka").SetActive(false);
     }
 }
