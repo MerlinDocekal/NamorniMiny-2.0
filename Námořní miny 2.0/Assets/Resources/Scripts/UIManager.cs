@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -65,4 +66,14 @@ public class UIManager : MonoBehaviour
     {
         PozadovanaAkceProTileOnClick = 2;
     }
-}
+    public void Play()
+    {
+        SceneManager.LoadScene("SampleScene");
+        print("jj");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("ukonèení hry");
+    }

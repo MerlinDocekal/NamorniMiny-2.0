@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - polickoPrefab: {instanceID: 0}
   - kamera: {instanceID: 0}
+  - tlacitko: {fileID: 6733780056618824695, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
