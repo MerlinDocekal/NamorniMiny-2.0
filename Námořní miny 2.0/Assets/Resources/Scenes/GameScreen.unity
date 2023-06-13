@@ -1798,6 +1798,7 @@ MonoBehaviour:
   lodPrefab7: {fileID: 4153963970062316494, guid: 2c2d0cb4d6fcb9d4a8b30661930c7456, type: 3}
   lodeGrid1: {fileID: 0}
   lodeGrid2: {fileID: 0}
+  umoznitaUmisteniLode1: 0
 --- !u!224 &1533231278 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7184276945655058704, guid: 24a2a71bf894901438fb6e130ec50578, type: 3}
@@ -2022,6 +2023,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pozadovanaVelikostLodiProTileOnClick: 0
   jePozadovanaRotaceLodiHorizontalne: 1
+  umoznenoUmisteniLode1: 0
+  umoznenoUmisteniLode3: 0
+  umoznenoUmisteniLode5: 0
+  umoznenoUmisteniLode7: 0
 --- !u!4 &1681851728
 Transform:
   m_ObjectHideFlags: 0

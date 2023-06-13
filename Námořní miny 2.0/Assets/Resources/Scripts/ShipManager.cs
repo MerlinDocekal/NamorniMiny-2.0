@@ -19,15 +19,8 @@ public class ShipManager : MonoBehaviour
     public GameObject lodeGrid1;
     public GameObject lodeGrid2;
 
-    private int pocetLodi1_1 = 5;
-    private int pocetLodi3_1 = 4;
-    private int pocetLodi5_1 = 3;
-    private int pocetLodi7_1 = 2;
+    public bool umoznitaUmisteniLode1;
 
-    private int pocetLodi1_2 = 5;
-    private int pocetLodi3_2 = 4;
-    private int pocetLodi5_2 = 3;
-    private int pocetLodi7_2 = 2;
 
     private void Awake()
     {
@@ -99,134 +92,70 @@ public class ShipManager : MonoBehaviour
             switch (velikostLodi)
             {
                 case 1:
-                    lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
-                    lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
-                    if (cisloGridu == 1)
+                    if (UIManager.Instance.umoznenoUmisteniLode1)
                     {
-                        lodeGrid1Dic[new Vector2(x, y)] = lod;
-                        lod.transform.SetParent(lodeGrid1.transform);
-                        pocetLodi1_1--;
-                        Debug.Log("Počet lodí celkem: " + (pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1));
-                        if (pocetLodi1_1 == 0)
+                        lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
+                        lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
+                        if (cisloGridu == 1)
                         {
-                            GameObject.Find("ButtonUmistitLod1_1").SetActive(false);
-                            if((pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1) == 0)
-                            {
-                                GameObject.Find("ButtonPrepnoutHrace_1").SetActive(true);
-                            }
+                            lodeGrid1Dic[new Vector2(x, y)] = lod;
+                            lod.transform.SetParent(lodeGrid1.transform);
                         }
-                    }
-                    else
-                    {
-                        lodeGrid2Dic[new Vector2(x, y)] = lod;
-                        lod.transform.SetParent(lodeGrid2.transform);
-                        pocetLodi1_2--;
-                        if (pocetLodi1_2 == 0)
+                        else
                         {
-                            GameObject.Find("ButtonUmistitLod1_2").SetActive(false);
-                            if (pocetLodi1_2 + pocetLodi3_2 + pocetLodi5_2 + pocetLodi7_2 == 0)
-                            {
-                                GameObject.Find("ButtonPrepnoutHrace_2").SetActive(true);
-                            }
+                            lodeGrid2Dic[new Vector2(x, y)] = lod;
+                            lod.transform.SetParent(lodeGrid2.transform);
                         }
                     }
                     break;
                 case 3:
-                    lod = Instantiate(lodPrefab3, new Vector3(x, y, -1), quaternion);
-                    lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
-                    if (cisloGridu == 1)
+                    if (UIManager.Instance.umoznenoUmisteniLode3)
                     {
-                        lodeGrid1Dic[new Vector2(x, y)] = lod;
-                        lod.transform.SetParent(lodeGrid1.transform);
-                        pocetLodi3_1--;
-                        Debug.Log("Počet lodí celkem: " + (pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1));
-                        if (pocetLodi3_1 == 0)
+                        lod = Instantiate(lodPrefab3, new Vector3(x, y, -1), quaternion);
+                        lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
+                        if (cisloGridu == 1)
                         {
-                            GameObject.Find("ButtonUmistitLod3_1").SetActive(false);
-                            if ((pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1) == 0)
-                            {
-                                GameObject.Find("ButtonPrepnoutHrace_1").SetActive(true);
-                            }
+                            lodeGrid1Dic[new Vector2(x, y)] = lod;
+                            lod.transform.SetParent(lodeGrid1.transform);
                         }
-                    }
-                    else
-                    {
-                        lodeGrid2Dic[new Vector2(x, y)] = lod;
-                        lod.transform.SetParent(lodeGrid2.transform);
-                        pocetLodi3_2--;
-                        if (pocetLodi3_2 == 0)
+                        else
                         {
-                            GameObject.Find("ButtonUmistitLod3_2").SetActive(false);
-                            if (pocetLodi1_2 + pocetLodi3_2 + pocetLodi5_2 + pocetLodi7_2 == 0)
-                            {
-                                GameObject.Find("ButtonPrepnoutHrace_2").SetActive(true);
-                            }
+                            lodeGrid2Dic[new Vector2(x, y)] = lod;
+                            lod.transform.SetParent(lodeGrid2.transform);
                         }
                     }
                     break;
                 case 5:
-                    lod = Instantiate(lodPrefab5, new Vector3(x, y, -1), quaternion);
-                    lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
-                    if (cisloGridu == 1)
+                    if (UIManager.Instance.umoznenoUmisteniLode5)
                     {
-                        lodeGrid1Dic[new Vector2(x, y)] = lod;
-                        lod.transform.SetParent(lodeGrid1.transform);
-                        pocetLodi5_1--;
-                        Debug.Log("Počet lodí celkem: " + (pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1));
-                        if (pocetLodi5_1 == 0)
+                        lod = Instantiate(lodPrefab5, new Vector3(x, y, -1), quaternion);
+                        lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
+                        if (cisloGridu == 1)
                         {
-                            GameObject.Find("ButtonUmistitLod5_1").SetActive(false);
-                            if ((pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1) == 0)
-                            {
-                                GameObject.Find("ButtonPrepnoutHrace_1").SetActive(true);
-                            }
+                            lodeGrid1Dic[new Vector2(x, y)] = lod;
+                            lod.transform.SetParent(lodeGrid1.transform);
                         }
-                    }
-                    else
-                    {
-                        lodeGrid2Dic[new Vector2(x, y)] = lod;
-                        lod.transform.SetParent(lodeGrid2.transform);
-                        pocetLodi5_2--;
-                        if (pocetLodi5_2 == 0)
+                        else
                         {
-                            GameObject.Find("ButtonUmistitLod5_2").SetActive(false);
-                            if (pocetLodi1_2 + pocetLodi3_2 + pocetLodi5_2 + pocetLodi7_2 == 0)
-                            {
-                                GameObject.Find("ButtonPrepnoutHrace_2").SetActive(true);
-                            }
+                            lodeGrid2Dic[new Vector2(x, y)] = lod;
+                            lod.transform.SetParent(lodeGrid2.transform);
                         }
                     }
                     break;
                 case 7:
-                    lod = Instantiate(lodPrefab7, new Vector3(x, y, -1), quaternion);
-                    lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
-                    if (cisloGridu == 1)
+                    if (UIManager.Instance.umoznenoUmisteniLode7)
                     {
-                        lodeGrid1Dic[new Vector2(x, y)] = lod;
-                        lod.transform.SetParent(lodeGrid1.transform);
-                        pocetLodi7_1--;
-                        Debug.Log("Počet lodí celkem: " + (pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1));
-                        if (pocetLodi7_1 == 0)
+                        lod = Instantiate(lodPrefab7, new Vector3(x, y, -1), quaternion);
+                        lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
+                        if (cisloGridu == 1)
                         {
-                            GameObject.Find("ButtonUmistitLod7_1").SetActive(false);
-                            if ((pocetLodi1_1 + pocetLodi3_1 + pocetLodi5_1 + pocetLodi7_1) == 0)
-                            {
-                                GameObject.Find("ButtonPrepnoutHrace_1").SetActive(true);
-                            }
+                            lodeGrid1Dic[new Vector2(x, y)] = lod;
+                            lod.transform.SetParent(lodeGrid1.transform);
                         }
-                    }
-                    else
-                    {
-                        lodeGrid2Dic[new Vector2(x, y)] = lod;
-                        lod.transform.SetParent(lodeGrid2.transform);
-                        pocetLodi7_2--;
-                        if (pocetLodi7_2 == 0)
+                        else
                         {
-                            GameObject.Find("ButtonUmistitLod7_2").SetActive(false);
-                            if (pocetLodi1_2 + pocetLodi3_2 + pocetLodi5_2 + pocetLodi7_2 == 0)
-                            {
-                                GameObject.Find("ButtonPrepnoutHrace_2").SetActive(true);
-                            }
+                            lodeGrid2Dic[new Vector2(x, y)] = lod;
+                            lod.transform.SetParent(lodeGrid2.transform);
                         }
                     }
                     break;
@@ -234,6 +163,7 @@ public class ShipManager : MonoBehaviour
                     break;
             }
 
+            UIManager.Instance.UmistenaLod(velikostLodi, cisloGridu);
             //Debug.Log("Lod vytvořena");
         }
         else

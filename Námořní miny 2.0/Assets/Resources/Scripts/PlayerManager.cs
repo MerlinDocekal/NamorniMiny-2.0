@@ -44,7 +44,6 @@ public class PlayerManager : MonoBehaviour
     {
         GameObject.Find("Grid2").SetActive(false);
         GameObject.Find("TlacitkaHrace2").SetActive(false);
-        GameObject.Find("NeutralniTlacitka").SetActive(false);
         GameObject.Find("ButtonPrepnoutHrace_1").SetActive(false);
     }
 
@@ -52,6 +51,5 @@ public class PlayerManager : MonoBehaviour
     {
         GameObject.Find("Grid1").SetActive(false);
         GameObject.Find("TlacitkaHrace1").SetActive(false);
-        GameObject.Find("NeutralniTlacitka").SetActive(false);
     }
 }
