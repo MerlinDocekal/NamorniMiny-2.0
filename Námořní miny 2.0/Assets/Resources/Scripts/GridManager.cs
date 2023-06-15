@@ -25,8 +25,8 @@ public class GridManager : MonoBehaviour
     public Dictionary<Vector2, Mine> minyGrid1Dic = new Dictionary<Vector2, Mine>();
     public Dictionary<Vector2, Mine> minyGrid2Dic = new Dictionary<Vector2, Mine>();
 
-    private GameObject grid1;
-    private GameObject grid2;
+    public GameObject grid1;
+    public GameObject grid2;
 
     private GameObject minyGrid1;
     private GameObject minyGrid2;

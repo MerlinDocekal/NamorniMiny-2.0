@@ -88,12 +88,12 @@ public class ShipManager : MonoBehaviour
 
         if (neniMimoHraniceGridu && nekolidujeSLodi)
         {
-            Lod lod = gameObject.AddComponent<Lod>();
             switch (velikostLodi)
             {
                 case 1:
                     if (UIManager.Instance.umoznenoUmisteniLode1)
                     {
+                        Lod lod = gameObject.AddComponent<Lod>();
                         lod = Instantiate(lodPrefab1, new Vector3(x, y, -1), quaternion);
                         lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
                         if (cisloGridu == 1)
@@ -106,11 +106,14 @@ public class ShipManager : MonoBehaviour
                             lodeGrid2Dic[new Vector2(x, y)] = lod;
                             lod.transform.SetParent(lodeGrid2.transform);
                         }
+
+                        UIManager.Instance.UmistenaLod(velikostLodi, cisloGridu);
                     }
                     break;
                 case 3:
                     if (UIManager.Instance.umoznenoUmisteniLode3)
                     {
+                        Lod lod = gameObject.AddComponent<Lod>();
                         lod = Instantiate(lodPrefab3, new Vector3(x, y, -1), quaternion);
                         lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
                         if (cisloGridu == 1)
@@ -123,11 +126,14 @@ public class ShipManager : MonoBehaviour
                             lodeGrid2Dic[new Vector2(x, y)] = lod;
                             lod.transform.SetParent(lodeGrid2.transform);
                         }
+
+                        UIManager.Instance.UmistenaLod(velikostLodi, cisloGridu);
                     }
                     break;
                 case 5:
                     if (UIManager.Instance.umoznenoUmisteniLode5)
                     {
+                        Lod lod = gameObject.AddComponent<Lod>();
                         lod = Instantiate(lodPrefab5, new Vector3(x, y, -1), quaternion);
                         lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
                         if (cisloGridu == 1)
@@ -140,11 +146,14 @@ public class ShipManager : MonoBehaviour
                             lodeGrid2Dic[new Vector2(x, y)] = lod;
                             lod.transform.SetParent(lodeGrid2.transform);
                         }
+
+                        UIManager.Instance.UmistenaLod(velikostLodi, cisloGridu);
                     }
                     break;
                 case 7:
                     if (UIManager.Instance.umoznenoUmisteniLode7)
                     {
+                        Lod lod = gameObject.AddComponent<Lod>();
                         lod = Instantiate(lodPrefab7, new Vector3(x, y, -1), quaternion);
                         lod.NastavitLod(velikostLodi, jeLodHorizontalne, x, y);
                         if (cisloGridu == 1)
@@ -157,13 +166,14 @@ public class ShipManager : MonoBehaviour
                             lodeGrid2Dic[new Vector2(x, y)] = lod;
                             lod.transform.SetParent(lodeGrid2.transform);
                         }
+
+                        UIManager.Instance.UmistenaLod(velikostLodi, cisloGridu);
                     }
                     break;
                 default:
                     break;
             }
 
-            UIManager.Instance.UmistenaLod(velikostLodi, cisloGridu);
             //Debug.Log("Lod vytvořena");
         }
         else
@@ -181,26 +191,22 @@ public class ShipManager : MonoBehaviour
         switch (cisloGridu)
         {
             case 1:
-                GameObject lodeGrid1 = GameObject.Find("LodeGrid1");
                 Vector3 pomocnik = lodeGrid1.transform.position;
-                pomocnik.z = 1;
+                pomocnik.z = 0;
                 lodeGrid1.transform.position = pomocnik;
                 break;
             case 2:
-                GameObject lodeGrid2 = GameObject.Find("LodeGrid2");
                 pomocnik = lodeGrid2.transform.position;
-                pomocnik.z = 1;
+                pomocnik.z = 0;
                 lodeGrid2.transform.position = pomocnik;
                 break;
             case 3:
-                lodeGrid1 = GameObject.Find("LodeGrid1");
                 pomocnik = lodeGrid1.transform.position;
-                pomocnik.z = 1;
+                pomocnik.z = 0;
                 lodeGrid1.transform.position = pomocnik;
 
-                lodeGrid2 = GameObject.Find("LodeGrid2");
                 pomocnik = lodeGrid2.transform.position;
-                pomocnik.z = 1;
+                pomocnik.z = 0;
                 lodeGrid2.transform.position = pomocnik;
                 break;            
             default:          
@@ -217,24 +223,20 @@ public class ShipManager : MonoBehaviour
         switch (cisloGridu)
         {
             case 1:
-                GameObject lodeGrid1 = GameObject.Find("LodeGrid1");
                 Vector3 pomocnik = lodeGrid1.transform.position;
                 pomocnik.z = -1;
                 lodeGrid1.transform.position = pomocnik;
                 break;
             case 2:
-                GameObject lodeGrid2 = GameObject.Find("LodeGrid2");
                 pomocnik = lodeGrid2.transform.position;
                 pomocnik.z = -1;
                 lodeGrid2.transform.position = pomocnik;
                 break;
             case 3:
-                lodeGrid1 = GameObject.Find("LodeGrid1");
                 pomocnik = lodeGrid1.transform.position;
                 pomocnik.z = -1;
                 lodeGrid1.transform.position = pomocnik;
 
-                lodeGrid2 = GameObject.Find("LodeGrid2");
                 pomocnik = lodeGrid2.transform.position;
                 pomocnik.z = -1;
                 lodeGrid2.transform.position = pomocnik;

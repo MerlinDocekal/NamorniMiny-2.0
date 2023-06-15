@@ -25,7 +25,15 @@ public class UIManager : MonoBehaviour
     public bool umoznenoUmisteniLode5;
     public bool umoznenoUmisteniLode7;
 
-    private GameObject buttonPrepnoutHrace_1;
+    public GameObject buttonPrepnoutHrace_1;
+    public GameObject buttonPrepnoutHrace_2;
+
+    public GameObject tlacitkaHrace1;
+    public GameObject tlacitkaHrace2;
+
+    public GameObject buttonMina;
+    public GameObject buttonRotace;
+    public GameObject buttonPrepinacObrazovky;
 
     private void Awake()
     {
@@ -37,6 +45,24 @@ public class UIManager : MonoBehaviour
         {
             Instance = this;
         }
+        UIManagerInit();
+
+        buttonPrepnoutHrace_1 = GameObject.Find("ButtonPrepnoutHrace_1");
+        buttonPrepnoutHrace_2 = GameObject.Find("ButtonPrepnoutHrace_2");
+
+        tlacitkaHrace1 = GameObject.Find("TlacitkaHrace1");
+        tlacitkaHrace2 = GameObject.Find("TlacitkaHrace2");
+
+        buttonMina = GameObject.Find("ButtonMina");
+        buttonRotace = GameObject.Find("ButtonRotace");
+        buttonPrepinacObrazovky = GameObject.Find("ButtonPrepnoutObrazovku");
+
+        buttonMina.SetActive(false);
+        buttonPrepinacObrazovky.SetActive(false);
+    }
+
+    public void UIManagerInit()
+    {
         PozadovanaAkceProTileOnClick = 1;
 
         pocetLodi1VeFaziUmisteni = 5;
@@ -48,8 +74,6 @@ public class UIManager : MonoBehaviour
         umoznenoUmisteniLode3 = true;
         umoznenoUmisteniLode5 = true;
         umoznenoUmisteniLode7 = true;
-
-        buttonPrepnoutHrace_1 = GameObject.Find("ButtonPrepnoutHrace_1");
     }
 
     public void buttonPrepnoutHrace()
@@ -89,6 +113,73 @@ public class UIManager : MonoBehaviour
     public void buttonUmistitMinu()
     {
         PozadovanaAkceProTileOnClick = 2;
+    }
+
+
+    public void buttonPrepnoutObrazovku()
+    {
+        if(PlayerManager.Instance.fazeUmistovaniLodi && !PlayerManager.Instance.HrajeHrac1)
+        {
+            PlayerManager.Instance.UmistovaniLodiHrace2();
+        }
+        else if (PlayerManager.Instance.fazeUmistovaniLodi && PlayerManager.Instance.HrajeHrac1)
+        {
+            PlayerManager.Instance.UkoncitFaziUmistovaniLodi();
+            PlayerManager.Instance.fazeUmistovaniLodi = false;
+        }
+        else
+        {
+            if (PlayerManager.Instance.HrajeHrac1)
+            {
+                GridManager.Instance.grid1.SetActive(true);
+                GridManager.Instance.grid2.SetActive(true);
+
+                ShipManager.Instance.lodeGrid1.SetActive(true);
+                ShipManager.Instance.lodeGrid2.SetActive(true);
+
+                ShipManager.Instance.SkrytLode(2);
+                ShipManager.Instance.ZobrazitLode(1);
+
+                Instance.buttonMina.SetActive(true);
+                buttonPrepnoutHrace_2.SetActive(false);
+                buttonPrepnoutHrace_1.SetActive(true);
+            }
+            else
+            {
+                GridManager.Instance.grid1.SetActive(true);
+                GridManager.Instance.grid2.SetActive(true);
+
+                ShipManager.Instance.lodeGrid1.SetActive(true);
+                ShipManager.Instance.lodeGrid2.SetActive(true);
+
+                ShipManager.Instance.SkrytLode(1);
+                ShipManager.Instance.ZobrazitLode(2);
+
+
+                Instance.buttonMina.SetActive(true);
+                buttonPrepnoutHrace_1.SetActive(false);
+                buttonPrepnoutHrace_2.SetActive(true);
+            }
+        }
+
+        buttonPrepinacObrazovky.SetActive(false);
+    }
+
+    public void SkrytObrazovku()
+    {
+        GridManager.Instance.grid1.SetActive(false);
+        GridManager.Instance.grid2.SetActive(false);
+
+        ShipManager.Instance.lodeGrid1.SetActive(false);
+        ShipManager.Instance.lodeGrid2.SetActive(false);
+
+        tlacitkaHrace1.SetActive(false);
+        tlacitkaHrace2.SetActive(false);
+
+        buttonMina.SetActive(false);
+        buttonRotace.SetActive(false);
+
+        buttonPrepinacObrazovky.SetActive(true);
     }
 
     public void UmistenaLod(int velikostLodi, int cisloGridu)
@@ -138,7 +229,14 @@ public class UIManager : MonoBehaviour
             GameObject.Find(nazev).SetActive(false);
             if((pocetLodi1VeFaziUmisteni + pocetLodi3VeFaziUmisteni + pocetLodi5VeFaziUmisteni + pocetLodi7VeFaziUmisteni) == 0)
             {
-                buttonPrepnoutHrace_1.SetActive(true);
+                if (PlayerManager.Instance.HrajeHrac1)
+                {
+                    buttonPrepnoutHrace_1.SetActive(true);
+                }
+                else
+                {
+                    buttonPrepnoutHrace_2.SetActive(true);
+                }
             }
         }
     }

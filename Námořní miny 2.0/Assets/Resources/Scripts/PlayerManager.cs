@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance { get; private set; }
 
     public bool HrajeHrac1 { get; private set; }
+    public bool fazeUmistovaniLodi = false;
+
 
     private void Start()
     {
@@ -18,38 +20,60 @@ public class PlayerManager : MonoBehaviour
         {
             Instance = this;
         }
+        UmistovaniLodiHrace1();
         HrajeHrac1 = true;
-        
-        NaklikavaniLodiHrace1();
     }
 
     public void PrepnoutHrace()
     {
-        HrajeHrac1 = !HrajeHrac1;
-        Debug.Log("Hraje hr·Ë 1: " + HrajeHrac1);
-
-        if(HrajeHrac1)
+        if (fazeUmistovaniLodi && HrajeHrac1)
         {
-            ShipManager.Instance.SkrytLode(2);
-            ShipManager.Instance.ZobrazitLode(1);
+            UIManager.Instance.SkrytObrazovku();
+        }
+        else if(fazeUmistovaniLodi)
+        {
+            UIManager.Instance.SkrytObrazovku();
         }
         else
         {
-            ShipManager.Instance.SkrytLode(1);
-            ShipManager.Instance.ZobrazitLode(2);
+            UIManager.Instance.SkrytObrazovku();
         }
+
+        HrajeHrac1 = !HrajeHrac1;
     }
 
-    private void NaklikavaniLodiHrace1()
+    public void UmistovaniLodiHrace1()
     {
-        GameObject.Find("Grid2").SetActive(false);
-        GameObject.Find("TlacitkaHrace2").SetActive(false);
-        GameObject.Find("ButtonPrepnoutHrace_1").SetActive(false);
+        fazeUmistovaniLodi = true;
+        GridManager.Instance.grid2.SetActive(false);
+        UIManager.Instance.tlacitkaHrace2.SetActive(false);
+        UIManager.Instance.buttonPrepnoutHrace_1.SetActive(false);
     }
 
-    private void NaklikavaniLodiHrace2()
+    public void UmistovaniLodiHrace2()
     {
-        GameObject.Find("Grid1").SetActive(false);
-        GameObject.Find("TlacitkaHrace1").SetActive(false);
+        GridManager.Instance.grid2.SetActive(true);
+
+        ShipManager.Instance.lodeGrid2.SetActive(true);
+
+        UIManager.Instance.UIManagerInit();
+        UIManager.Instance.tlacitkaHrace2.SetActive(true);
+        UIManager.Instance.buttonPrepnoutHrace_2.SetActive(false);
+    }
+
+    public void UkoncitFaziUmistovaniLodi()
+    {
+        HrajeHrac1 = true;
+        GridManager.Instance.grid1.SetActive(true);
+        GridManager.Instance.grid2.SetActive(true);
+
+        ShipManager.Instance.lodeGrid1.SetActive(true);
+        ShipManager.Instance.lodeGrid2.SetActive(true);
+        ShipManager.Instance.SkrytLode(2);
+
+        UIManager.Instance.buttonMina.SetActive(true);
+        UIManager.Instance.tlacitkaHrace1.SetActive(true);
+        UIManager.Instance.tlacitkaHrace2.SetActive(true);
+        UIManager.Instance.buttonPrepnoutHrace_1.SetActive(true);
     }
 }
