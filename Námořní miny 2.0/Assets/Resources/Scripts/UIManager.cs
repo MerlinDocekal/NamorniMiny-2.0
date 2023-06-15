@@ -57,10 +57,10 @@ public class UIManager : MonoBehaviour
         PlayerManager.Instance.PrepnoutHrace();
     }
 
-    public void buttonRotaceLodi()
-    {
-        jePozadovanaRotaceLodiHorizontalne = !jePozadovanaRotaceLodiHorizontalne;
-    }
+    //public void buttonRotaceLodi()
+    //{
+    //    jePozadovanaRotaceLodiHorizontalne = !jePozadovanaRotaceLodiHorizontalne;
+    //}
 
     public void buttonUmistitLod1()
     {
@@ -153,4 +153,13 @@ public class UIManager : MonoBehaviour
         Application.Quit();
         Debug.Log("ukonèení hry");
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            jePozadovanaRotaceLodiHorizontalne = !jePozadovanaRotaceLodiHorizontalne;
+        }
+    }
+
 }
