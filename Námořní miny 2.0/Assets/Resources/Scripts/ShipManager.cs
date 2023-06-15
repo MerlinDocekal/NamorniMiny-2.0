@@ -192,21 +192,21 @@ public class ShipManager : MonoBehaviour
         {
             case 1:
                 Vector3 pomocnik = lodeGrid1.transform.position;
-                pomocnik.z = 0;
+                pomocnik.z = 2;
                 lodeGrid1.transform.position = pomocnik;
                 break;
             case 2:
                 pomocnik = lodeGrid2.transform.position;
-                pomocnik.z = 0;
+                pomocnik.z = 2;
                 lodeGrid2.transform.position = pomocnik;
                 break;
             case 3:
                 pomocnik = lodeGrid1.transform.position;
-                pomocnik.z = 0;
+                pomocnik.z = 2;
                 lodeGrid1.transform.position = pomocnik;
 
                 pomocnik = lodeGrid2.transform.position;
-                pomocnik.z = 0;
+                pomocnik.z = 2;
                 lodeGrid2.transform.position = pomocnik;
                 break;            
             default:          

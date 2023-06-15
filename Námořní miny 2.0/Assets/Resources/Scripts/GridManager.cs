@@ -151,6 +151,8 @@ public class GridManager : MonoBehaviour
             lod.ZasahnoutLod();
             Debug.Log("Loï zasažena.");
         }
+        UIManager.Instance.vypalenaMina = true;
+        UIManager.Instance.buttonMina.SetActive(false);
     }
 
 }

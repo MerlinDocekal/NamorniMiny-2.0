@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour
     public bool umoznenoUmisteniLode5;
     public bool umoznenoUmisteniLode7;
 
+    public bool vypalenaMina = false;
+    
     public GameObject buttonPrepnoutHrace_1;
     public GameObject buttonPrepnoutHrace_2;
 
@@ -32,8 +34,9 @@ public class UIManager : MonoBehaviour
     public GameObject tlacitkaHrace2;
 
     public GameObject buttonMina;
-    public GameObject buttonRotace;
     public GameObject buttonPrepinacObrazovky;
+
+
 
     private void Awake()
     {
@@ -54,7 +57,6 @@ public class UIManager : MonoBehaviour
         tlacitkaHrace2 = GameObject.Find("TlacitkaHrace2");
 
         buttonMina = GameObject.Find("ButtonMina");
-        buttonRotace = GameObject.Find("ButtonRotace");
         buttonPrepinacObrazovky = GameObject.Find("ButtonPrepnoutObrazovku");
 
         buttonMina.SetActive(false);
@@ -140,9 +142,11 @@ public class UIManager : MonoBehaviour
                 ShipManager.Instance.SkrytLode(2);
                 ShipManager.Instance.ZobrazitLode(1);
 
-                Instance.buttonMina.SetActive(true);
-                buttonPrepnoutHrace_2.SetActive(false);
+                buttonMina.SetActive(true);
+                tlacitkaHrace1.SetActive(true);
                 buttonPrepnoutHrace_1.SetActive(true);
+
+                vypalenaMina = false;
             }
             else
             {
@@ -156,9 +160,11 @@ public class UIManager : MonoBehaviour
                 ShipManager.Instance.ZobrazitLode(2);
 
 
-                Instance.buttonMina.SetActive(true);
-                buttonPrepnoutHrace_1.SetActive(false);
+                buttonMina.SetActive(true);
+                tlacitkaHrace2.SetActive(true);
                 buttonPrepnoutHrace_2.SetActive(true);
+
+                vypalenaMina = false;
             }
         }
 
@@ -177,7 +183,6 @@ public class UIManager : MonoBehaviour
         tlacitkaHrace2.SetActive(false);
 
         buttonMina.SetActive(false);
-        buttonRotace.SetActive(false);
 
         buttonPrepinacObrazovky.SetActive(true);
     }

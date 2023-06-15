@@ -74,6 +74,7 @@ public class PlayerManager : MonoBehaviour
         UIManager.Instance.buttonMina.SetActive(true);
         UIManager.Instance.tlacitkaHrace1.SetActive(true);
         UIManager.Instance.tlacitkaHrace2.SetActive(true);
+        UIManager.Instance.buttonPrepnoutHrace_2.SetActive(false);
         UIManager.Instance.buttonPrepnoutHrace_1.SetActive(true);
     }
 }

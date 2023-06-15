@@ -43,7 +43,10 @@ public class Tile : MonoBehaviour
                 ShipManager.Instance.UmistitLod(Souradnice.x, Souradnice.y, UIManager.Instance.pozadovanaVelikostLodiProTileOnClick, UIManager.Instance.jePozadovanaRotaceLodiHorizontalne, CisloGridu);
                 break;
             case 2:
-                GridManager.Instance.UmistitMinu(Souradnice.x, Souradnice.y, CisloGridu);
+                if (!UIManager.Instance.vypalenaMina)
+                {
+                    GridManager.Instance.UmistitMinu(Souradnice.x, Souradnice.y, CisloGridu);
+                }
                 break;
         }
     }
