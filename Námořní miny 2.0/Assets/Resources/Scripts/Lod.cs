@@ -31,7 +31,19 @@ public class Lod : MonoBehaviour
         {
             znicena = true;
             Debug.Log("Loï znièena.");
-            if(PlayerManager.Instance.HrajeHrac1)
+
+
+            Lod lod = ShipManager.Instance.lodeGrid2Dic[new Vector2(this.x, this.y)];
+            if (lod.Velikost == 1)
+            {
+                lod.GetComponent<SpriteRenderer>().sprite = ShipManager.Instance.lodZnicenaSprite1;
+            }
+            else if (lod.Velikost == 3)
+            {
+                lod.GetComponent<SpriteRenderer>().sprite = ShipManager.Instance.lodZnicenaSprite3;
+            }
+
+            if (PlayerManager.Instance.HrajeHrac1)
             {
                 ShipManager.Instance.lodeGrid2Dic.Remove(new Vector2(this.x, this.y));
                 if(ShipManager.Instance.lodeGrid2Dic.Count == 0)

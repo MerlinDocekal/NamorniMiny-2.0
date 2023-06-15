@@ -13,6 +13,9 @@ public class ShipManager : MonoBehaviour
     [SerializeField] private Lod lodPrefab5;
     [SerializeField] private Lod lodPrefab7;
 
+    [SerializeField] public Sprite lodZnicenaSprite1;
+    [SerializeField] public Sprite lodZnicenaSprite3;
+
     public Dictionary<Vector2, Lod> lodeGrid1Dic = new Dictionary<Vector2, Lod>();
     public Dictionary<Vector2, Lod> lodeGrid2Dic = new Dictionary<Vector2, Lod>();
 

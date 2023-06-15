@@ -379,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 6733780056618824681, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1469573674}
+      objectReference: {fileID: 0}
     - target: {fileID: 6733780056618824681, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -516,7 +516,7 @@ PrefabInstance:
     - target: {fileID: 6733780056618824681, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1469573676}
+      objectReference: {fileID: 0}
     - target: {fileID: 6733780056618824681, guid: 475c4e6410f75bd4b9d3cddcbadeca4c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -871,6 +871,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pozadovanaVelikostLodiProTileOnClick: 0
   jePozadovanaRotaceLodiHorizontalne: 1
+  umoznenoUmisteniLode1: 0
+  umoznenoUmisteniLode3: 0
+  umoznenoUmisteniLode5: 0
+  umoznenoUmisteniLode7: 0
+  vypalenaMina: 0
+  buttonPrepnoutHrace_1: {fileID: 0}
+  buttonPrepnoutHrace_2: {fileID: 0}
+  tlacitkaHrace1: {fileID: 0}
+  tlacitkaHrace2: {fileID: 0}
+  buttonMina: {fileID: 0}
+  buttonPrepinacObrazovky: {fileID: 0}
 --- !u!1 &1581373465
 GameObject:
   m_ObjectHideFlags: 0

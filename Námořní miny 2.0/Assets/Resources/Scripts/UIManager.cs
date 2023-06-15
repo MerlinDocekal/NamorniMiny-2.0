@@ -48,19 +48,24 @@ public class UIManager : MonoBehaviour
         {
             Instance = this;
         }
-        UIManagerInit();
 
-        buttonPrepnoutHrace_1 = GameObject.Find("ButtonPrepnoutHrace_1");
-        buttonPrepnoutHrace_2 = GameObject.Find("ButtonPrepnoutHrace_2");
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameScreen"))
+        {
+            UIManagerInit();
 
-        tlacitkaHrace1 = GameObject.Find("TlacitkaHrace1");
-        tlacitkaHrace2 = GameObject.Find("TlacitkaHrace2");
+            buttonPrepnoutHrace_1 = GameObject.Find("ButtonPrepnoutHrace_1");
+            buttonPrepnoutHrace_2 = GameObject.Find("ButtonPrepnoutHrace_2");
 
-        buttonMina = GameObject.Find("ButtonMina");
-        buttonPrepinacObrazovky = GameObject.Find("ButtonPrepnoutObrazovku");
+            tlacitkaHrace1 = GameObject.Find("TlacitkaHrace1");
+            tlacitkaHrace2 = GameObject.Find("TlacitkaHrace2");
 
-        buttonMina.SetActive(false);
-        buttonPrepinacObrazovky.SetActive(false);
+            buttonMina = GameObject.Find("ButtonMina");
+            buttonPrepinacObrazovky = GameObject.Find("ButtonPrepinacObrazovky");
+
+            buttonMina.SetActive(false);
+            buttonPrepinacObrazovky.SetActive(false);
+
+        }
     }
 
     public void UIManagerInit()
@@ -82,11 +87,6 @@ public class UIManager : MonoBehaviour
     {
         PlayerManager.Instance.PrepnoutHrace();
     }
-
-    //public void buttonRotaceLodi()
-    //{
-    //    jePozadovanaRotaceLodiHorizontalne = !jePozadovanaRotaceLodiHorizontalne;
-    //}
 
     public void buttonUmistitLod1()
     {
@@ -262,6 +262,10 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             jePozadovanaRotaceLodiHorizontalne = !jePozadovanaRotaceLodiHorizontalne;
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MenuScreen");
         }
     }
 
